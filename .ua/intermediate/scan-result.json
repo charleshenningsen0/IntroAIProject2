@@ -1,0 +1,106 @@
+{
+  "name": "project2-1",
+  "description": "UC Berkeley CS188 Pacman multi-agent search project (VERSION v1.004): a Python teaching codebase containing the Pacman game engine, layout loading, shared search utilities, and student agent skeletons for reflex agents, minimax, alpha-beta pruning, expectimax, and custom evaluation functions.",
+  "languages": [
+    "python"
+  ],
+  "frameworks": [],
+  "files": [
+    {
+      "path": "VERSION",
+      "language": "unknown",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "game.py",
+      "language": "python",
+      "sizeLines": 830,
+      "fileCategory": "code"
+    },
+    {
+      "path": "ghostAgents.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "keyboardAgents.py",
+      "language": "python",
+      "sizeLines": 105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "layout.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "multiAgents.py",
+      "language": "python",
+      "sizeLines": 189,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pacman.py",
+      "language": "python",
+      "sizeLines": 864,
+      "fileCategory": "code"
+    },
+    {
+      "path": "pacmanAgents.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "projectParams.py",
+      "language": "python",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "util.py",
+      "language": "python",
+      "sizeLines": 1260,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 10,
+  "filteredByIgnore": 203,
+  "estimatedComplexity": "small",
+  "importMap": {
+    "VERSION": [],
+    "game.py": [
+      "util.py"
+    ],
+    "ghostAgents.py": [
+      "game.py",
+      "util.py"
+    ],
+    "keyboardAgents.py": [
+      "game.py"
+    ],
+    "layout.py": [
+      "game.py",
+      "util.py"
+    ],
+    "multiAgents.py": [
+      "game.py",
+      "util.py"
+    ],
+    "pacman.py": [
+      "game.py",
+      "layout.py",
+      "util.py"
+    ],
+    "pacmanAgents.py": [
+      "game.py",
+      "pacman.py",
+      "util.py"
+    ],
+    "projectParams.py": [],
+    "util.py": []
+  }
+}

@@ -1,0 +1,1134 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "2945ae810274d12ac402307883fd917582ae8329",
+  "generatedAt": "2026-10-31T21:10:35.128Z",
+  "files": {
+    "VERSION": {
+      "filePath": "VERSION",
+      "contentHash": "ac410226d4a6407e83b56c0b43e338d1393634dcbee90cc5445c08f9db87f738",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "game.py": {
+      "filePath": "game.py",
+      "contentHash": "dc1c359853f6794471064f7312faac32a35a58e1d2db5a348789d602ccffd429",
+      "functions": [
+        {
+          "name": "reconstituteGrid",
+          "params": [
+            "bitRep"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [
+        {
+          "name": "Agent",
+          "methods": [
+            "__init__",
+            "getAction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "Directions",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "Configuration",
+          "methods": [
+            "__init__",
+            "getPosition",
+            "getDirection",
+            "isInteger",
+            "__eq__",
+            "__hash__",
+            "__str__",
+            "generateSuccessor"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 50
+        },
+        {
+          "name": "AgentState",
+          "methods": [
+            "__init__",
+            "__str__",
+            "__eq__",
+            "__hash__",
+            "copy",
+            "getPosition",
+            "getDirection"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 46
+        },
+        {
+          "name": "Grid",
+          "methods": [
+            "__init__",
+            "__getitem__",
+            "__setitem__",
+            "__str__",
+            "__eq__",
+            "__hash__",
+            "copy",
+            "deepCopy",
+            "shallowCopy",
+            "count",
+            "asList",
+            "packBits",
+            "_cellIndexToPosition",
+            "_unpackBits",
+            "_unpackInt"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 123
+        },
+        {
+          "name": "Actions",
+          "methods": [
+            "reverseDirection",
+            "vectorToDirection",
+            "directionToVector",
+            "getPossibleActions",
+            "getLegalNeighbors",
+            "getSuccessor"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 101
+        },
+        {
+          "name": "GameStateData",
+          "methods": [
+            "__init__",
+            "deepCopy",
+            "copyAgentStates",
+            "__eq__",
+            "__hash__",
+            "__str__",
+            "_foodWallStr",
+            "_pacStr",
+            "_ghostStr",
+            "initialize"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 151
+        },
+        {
+          "name": "Game",
+          "methods": [
+            "__init__",
+            "getProgress",
+            "_agentCrash",
+            "mute",
+            "unmute",
+            "run"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 262
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "traceback",
+          "specifiers": [
+            "traceback"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "*"
+          ]
+        }
+      ],
+      "exports": [
+        "Agent",
+        "Directions",
+        "Configuration",
+        "AgentState",
+        "Grid",
+        "reconstituteGrid",
+        "Actions",
+        "GameStateData",
+        "Game"
+      ],
+      "totalLines": 831,
+      "hasStructuralAnalysis": true
+    },
+    "ghostAgents.py": {
+      "filePath": "ghostAgents.py",
+      "contentHash": "49ccb65bcb44270cec6d1a783b84898efa80c1d69c71aae529813189b86327d4",
+      "functions": [],
+      "classes": [
+        {
+          "name": "GhostAgent",
+          "methods": [
+            "__init__",
+            "getAction",
+            "getDistribution"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "RandomGhost",
+          "methods": [
+            "getDistribution"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "DirectionalGhost",
+          "methods": [
+            "__init__",
+            "getDistribution"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 47
+        }
+      ],
+      "imports": [
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "util"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "Actions",
+            "Agent",
+            "Directions"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "manhattanDistance"
+          ]
+        }
+      ],
+      "exports": [
+        "GhostAgent",
+        "RandomGhost",
+        "DirectionalGhost"
+      ],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    "keyboardAgents.py": {
+      "filePath": "keyboardAgents.py",
+      "contentHash": "314ac661826f666541e767a1b1ae02c0fe7a1dc1d9ac2da19e46d7d9d69b98bc",
+      "functions": [],
+      "classes": [
+        {
+          "name": "KeyboardAgent",
+          "methods": [
+            "__init__",
+            "getAction",
+            "getMove"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 61
+        },
+        {
+          "name": "KeyboardAgent2",
+          "methods": [
+            "getMove"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "imports": [
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "Agent",
+            "Directions"
+          ]
+        }
+      ],
+      "exports": [
+        "KeyboardAgent",
+        "KeyboardAgent2"
+      ],
+      "totalLines": 106,
+      "hasStructuralAnalysis": true
+    },
+    "layout.py": {
+      "filePath": "layout.py",
+      "contentHash": "735f30be23638d8efa84be7970e2f5b8cd33d9b52ae247e291552a0dd37c2b07",
+      "functions": [
+        {
+          "name": "getLayout",
+          "params": [
+            "name",
+            "back"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "tryToLoad",
+          "params": [
+            "fullname"
+          ],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [
+        {
+          "name": "Layout",
+          "methods": [
+            "__init__",
+            "getNumGhosts",
+            "initializeVisibilityMatrix",
+            "isWall",
+            "getRandomLegalPosition",
+            "getRandomCorner",
+            "getFurthestCorner",
+            "isVisibleFrom",
+            "__str__",
+            "deepCopy",
+            "processLayoutText",
+            "processLayoutChar"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 139
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "functools",
+          "specifiers": [
+            "reduce"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "Grid"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "manhattanDistance"
+          ]
+        }
+      ],
+      "exports": [
+        "Layout",
+        "getLayout",
+        "tryToLoad"
+      ],
+      "totalLines": 191,
+      "hasStructuralAnalysis": true
+    },
+    "multiAgents.py": {
+      "filePath": "multiAgents.py",
+      "contentHash": "b27b4b6a6762da78f17f9a93a7a5d793d160fc8b4a91c02d256305ff627e37d8",
+      "functions": [
+        {
+          "name": "scoreEvaluationFunction",
+          "params": [
+            "currentGameState"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "betterEvaluationFunction",
+          "params": [
+            "currentGameState"
+          ],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReflexAgent",
+          "methods": [
+            "getAction",
+            "evaluationFunction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 60
+        },
+        {
+          "name": "MultiAgentSearchAgent",
+          "methods": [
+            "__init__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "MinimaxAgent",
+          "methods": [
+            "getAction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "AlphaBetaAgent",
+          "methods": [
+            "getAction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "ExpectimaxAgent",
+          "methods": [
+            "getAction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "imports": [
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "util"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "Agent",
+            "Directions"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "manhattanDistance"
+          ]
+        }
+      ],
+      "exports": [
+        "ReflexAgent",
+        "scoreEvaluationFunction",
+        "MultiAgentSearchAgent",
+        "MinimaxAgent",
+        "AlphaBetaAgent",
+        "ExpectimaxAgent",
+        "betterEvaluationFunction"
+      ],
+      "totalLines": 190,
+      "hasStructuralAnalysis": true
+    },
+    "pacman.py": {
+      "filePath": "pacman.py",
+      "contentHash": "9371c36e00317708f734c30fd0778d7338181028667a9f10c1c999d24f5c02f0",
+      "functions": [
+        {
+          "name": "default",
+          "params": [
+            "str"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "parseAgentArgs",
+          "params": [
+            "str"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "readCommand",
+          "params": [
+            "argv"
+          ],
+          "exported": true,
+          "lineCount": 214
+        },
+        {
+          "name": "loadAgent",
+          "params": [
+            "pacman",
+            "nographics"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "replayGame",
+          "params": [
+            "layout",
+            "actions",
+            "display"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "runGames",
+          "params": [
+            "layout",
+            "pacman",
+            "ghosts",
+            "display",
+            "numGames",
+            "record",
+            "numTraining",
+            "catchExceptions",
+            "timeout"
+          ],
+          "exported": true,
+          "lineCount": 58
+        }
+      ],
+      "classes": [
+        {
+          "name": "GameState",
+          "methods": [
+            "getAndResetExplored",
+            "getLegalActions",
+            "generateSuccessor",
+            "getLegalPacmanActions",
+            "generatePacmanSuccessor",
+            "getPacmanState",
+            "getPacmanPosition",
+            "getGhostStates",
+            "getGhostState",
+            "getGhostPosition",
+            "getGhostPositions",
+            "getNumAgents",
+            "getScore",
+            "getCapsules",
+            "getNumFood",
+            "getFood",
+            "getWalls",
+            "hasFood",
+            "hasWall",
+            "isLose",
+            "isWin",
+            "__init__",
+            "deepCopy",
+            "__eq__",
+            "__hash__",
+            "__str__",
+            "initialize"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 204
+        },
+        {
+          "name": "ClassicGameRules",
+          "methods": [
+            "__init__",
+            "newGame",
+            "process",
+            "win",
+            "lose",
+            "getProgress",
+            "agentCrash",
+            "getMaxTotalTime",
+            "getMaxStartupTime",
+            "getMoveWarningTime",
+            "getMoveTimeout",
+            "getMaxTimeWarnings"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 69
+        },
+        {
+          "name": "PacmanRules",
+          "methods": [
+            "getLegalActions",
+            "applyAction",
+            "consume"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 63
+        },
+        {
+          "name": "GhostRules",
+          "methods": [
+            "getLegalActions",
+            "applyAction",
+            "decrementTimer",
+            "checkDeath",
+            "collide",
+            "canKill",
+            "placeGhost"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 85
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "types",
+          "specifiers": [
+            "types"
+          ]
+        },
+        {
+          "source": "layout",
+          "specifiers": [
+            "layout"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "util"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "Actions",
+            "Directions",
+            "Game",
+            "GameStateData"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "manhattanDistance",
+            "nearestPoint"
+          ]
+        }
+      ],
+      "exports": [
+        "GameState",
+        "ClassicGameRules",
+        "PacmanRules",
+        "GhostRules",
+        "default",
+        "parseAgentArgs",
+        "readCommand",
+        "loadAgent",
+        "replayGame",
+        "runGames"
+      ],
+      "totalLines": 865,
+      "hasStructuralAnalysis": true
+    },
+    "pacmanAgents.py": {
+      "filePath": "pacmanAgents.py",
+      "contentHash": "3b8315e40283caef1162dce53c70e370543b2b4b1c59533cbdd3788bc195681b",
+      "functions": [
+        {
+          "name": "scoreEvaluation",
+          "params": [
+            "state"
+          ],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [
+        {
+          "name": "LeftTurnAgent",
+          "methods": [
+            "getAction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "GreedyAgent",
+          "methods": [
+            "__init__",
+            "getAction"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "imports": [
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "game"
+          ]
+        },
+        {
+          "source": "util",
+          "specifiers": [
+            "util"
+          ]
+        },
+        {
+          "source": "game",
+          "specifiers": [
+            "Agent"
+          ]
+        },
+        {
+          "source": "pacman",
+          "specifiers": [
+            "Directions"
+          ]
+        }
+      ],
+      "exports": [
+        "LeftTurnAgent",
+        "GreedyAgent",
+        "scoreEvaluation"
+      ],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "projectParams.py": {
+      "filePath": "projectParams.py",
+      "contentHash": "60848ef9faa94ed260b7c826673b8a1da341921c4deac745b15bea52ae1808f7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "util.py": {
+      "filePath": "util.py",
+      "contentHash": "6acea195141a5a14bd7c19a961c784faf11f3b58853b8ec2c262406ede11aecc",
+      "functions": [
+        {
+          "name": "manhattanDistance",
+          "params": [
+            "xy1",
+            "xy2"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "raiseNotDefined",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "normalize",
+          "params": [
+            "vectorOrCounter"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "nSample",
+          "params": [
+            "distribution",
+            "values",
+            "n"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "sample",
+          "params": [
+            "distribution",
+            "values"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "sampleFromCounter",
+          "params": [
+            "ctr"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getProbability",
+          "params": [
+            "value",
+            "distribution",
+            "values"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "flipCoin",
+          "params": [
+            "p"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "chooseFromDistribution",
+          "params": [
+            "distribution"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "nearestPoint",
+          "params": [
+            "pos"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "sign",
+          "params": [
+            "x"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "arrayInvert",
+          "params": [
+            "array"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "matrixAsList",
+          "params": [
+            "matrix",
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "lookup",
+          "params": [
+            "name",
+            "namespace"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "pause",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "mutePrint",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "unmutePrint",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [
+        {
+          "name": "FixedRandom",
+          "methods": [
+            "__init__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 635
+        },
+        {
+          "name": "Stack",
+          "methods": [
+            "__init__",
+            "push",
+            "pop",
+            "isEmpty"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "Queue",
+          "methods": [
+            "__init__",
+            "push",
+            "pop",
+            "isEmpty"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "PriorityQueue",
+          "methods": [
+            "__init__",
+            "push",
+            "pop",
+            "isEmpty",
+            "update"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 38
+        },
+        {
+          "name": "PriorityQueueWithFunction",
+          "methods": [
+            "__init__",
+            "push"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "Counter",
+          "methods": [
+            "__getitem__",
+            "incrementAll",
+            "argMax",
+            "sortedKeys",
+            "totalCount",
+            "normalize",
+            "divideAll",
+            "copy",
+            "__mul__",
+            "__radd__",
+            "__add__",
+            "__sub__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 218
+        },
+        {
+          "name": "TimeoutFunctionException",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "TimeoutFunction",
+          "methods": [
+            "__init__",
+            "handle_timeout",
+            "__call__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "WritableNull",
+          "methods": [
+            "write"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "heapq",
+          "specifiers": [
+            "heapq"
+          ]
+        },
+        {
+          "source": "inspect",
+          "specifiers": [
+            "inspect"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "random",
+          "specifiers": [
+            "random"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "signal",
+          "specifiers": [
+            "signal"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        }
+      ],
+      "exports": [
+        "FixedRandom",
+        "Stack",
+        "Queue",
+        "PriorityQueue",
+        "PriorityQueueWithFunction",
+        "manhattanDistance",
+        "Counter",
+        "raiseNotDefined",
+        "normalize",
+        "nSample",
+        "sample",
+        "sampleFromCounter",
+        "getProbability",
+        "flipCoin",
+        "chooseFromDistribution",
+        "nearestPoint",
+        "sign",
+        "arrayInvert",
+        "matrixAsList",
+        "lookup",
+        "pause",
+        "TimeoutFunctionException",
+        "TimeoutFunction",
+        "WritableNull",
+        "mutePrint",
+        "unmutePrint"
+      ],
+      "totalLines": 1261,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

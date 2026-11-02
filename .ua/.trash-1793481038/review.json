@@ -1,0 +1,25 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:VERSION' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 71,
+    "totalEdges": 175,
+    "totalLayers": 5,
+    "tourSteps": 12,
+    "nodeTypes": {
+      "file": 10,
+      "class": 33,
+      "function": 28
+    },
+    "edgeTypes": {
+      "imports": 14,
+      "contains": 61,
+      "exports": 61,
+      "inherits": 13,
+      "calls": 22,
+      "depends_on": 4
+    }
+  }
+}

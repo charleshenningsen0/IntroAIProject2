@@ -1,0 +1,42 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 10,
+    "filesWithImports": 7,
+    "totalEdges": 14
+  },
+  "failures": [],
+  "importMap": {
+    "VERSION": [],
+    "game.py": [
+      "util.py"
+    ],
+    "ghostAgents.py": [
+      "game.py",
+      "util.py"
+    ],
+    "keyboardAgents.py": [
+      "game.py"
+    ],
+    "layout.py": [
+      "game.py",
+      "util.py"
+    ],
+    "multiAgents.py": [
+      "game.py",
+      "util.py"
+    ],
+    "pacman.py": [
+      "game.py",
+      "layout.py",
+      "util.py"
+    ],
+    "pacmanAgents.py": [
+      "game.py",
+      "pacman.py",
+      "util.py"
+    ],
+    "projectParams.py": [],
+    "util.py": []
+  }
+}

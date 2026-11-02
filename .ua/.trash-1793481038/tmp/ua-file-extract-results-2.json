@@ -1,0 +1,1411 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 3,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 3,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "ghostAgents.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 77,
+      "classes": [
+        {
+          "name": "GhostAgent",
+          "startLine": 22,
+          "endLine": 35,
+          "methods": [
+            "__init__",
+            "getAction",
+            "getDistribution"
+          ],
+          "properties": []
+        },
+        {
+          "name": "RandomGhost",
+          "startLine": 38,
+          "endLine": 46,
+          "methods": [
+            "getDistribution"
+          ],
+          "properties": []
+        },
+        {
+          "name": "DirectionalGhost",
+          "startLine": 49,
+          "endLine": 95,
+          "methods": [
+            "__init__",
+            "getDistribution"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GhostAgent",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "RandomGhost",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "DirectionalGhost",
+          "line": 49,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAction",
+          "callee": "self.getDistribution",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getAction",
+          "callee": "len",
+          "lineNumber": 28
+        },
+        {
+          "caller": "getAction",
+          "callee": "util.chooseFromDistribution",
+          "lineNumber": 31
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "util.raiseNotDefined",
+          "lineNumber": 35
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "util.Counter",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "state.getLegalActions",
+          "lineNumber": 43
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "dist.normalize",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "state.getGhostState",
+          "lineNumber": 59
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "state.getLegalActions",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "state.getGhostPosition",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "Actions.directionToVector",
+          "lineNumber": 68
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "state.getPacmanPosition",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "manhattanDistance",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "max",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "min",
+          "lineNumber": 80
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "zip",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "util.Counter",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "len",
+          "lineNumber": 91
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "len",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getDistribution",
+          "callee": "dist.normalize",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "multiAgents.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 189,
+      "nonEmptyLines": 142,
+      "functions": [
+        {
+          "name": "scoreEvaluationFunction",
+          "startLine": 84,
+          "endLine": 92,
+          "params": [
+            "currentGameState"
+          ]
+        },
+        {
+          "name": "betterEvaluationFunction",
+          "startLine": 177,
+          "endLine": 185,
+          "params": [
+            "currentGameState"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ReflexAgent",
+          "startLine": 22,
+          "endLine": 81,
+          "methods": [
+            "getAction",
+            "evaluationFunction"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MultiAgentSearchAgent",
+          "startLine": 95,
+          "endLine": 113,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "MinimaxAgent",
+          "startLine": 116,
+          "endLine": 145,
+          "methods": [
+            "getAction"
+          ],
+          "properties": []
+        },
+        {
+          "name": "AlphaBetaAgent",
+          "startLine": 148,
+          "endLine": 158,
+          "methods": [
+            "getAction"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ExpectimaxAgent",
+          "startLine": 161,
+          "endLine": 174,
+          "methods": [
+            "getAction"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ReflexAgent",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "scoreEvaluationFunction",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "MultiAgentSearchAgent",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "MinimaxAgent",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "AlphaBetaAgent",
+          "line": 148,
+          "isDefault": false
+        },
+        {
+          "name": "ExpectimaxAgent",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "betterEvaluationFunction",
+          "line": 177,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAction",
+          "callee": "gameState.getLegalActions",
+          "lineNumber": 42
+        },
+        {
+          "caller": "getAction",
+          "callee": "self.evaluationFunction",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getAction",
+          "callee": "max",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getAction",
+          "callee": "range",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getAction",
+          "callee": "len",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getAction",
+          "callee": "random.choice",
+          "lineNumber": 50
+        },
+        {
+          "caller": "evaluationFunction",
+          "callee": "currentGameState.generatePacmanSuccessor",
+          "lineNumber": 72
+        },
+        {
+          "caller": "evaluationFunction",
+          "callee": "successorGameState.getPacmanPosition",
+          "lineNumber": 73
+        },
+        {
+          "caller": "evaluationFunction",
+          "callee": "successorGameState.getFood",
+          "lineNumber": 74
+        },
+        {
+          "caller": "evaluationFunction",
+          "callee": "successorGameState.getGhostStates",
+          "lineNumber": 75
+        },
+        {
+          "caller": "evaluationFunction",
+          "callee": "successorGameState.getScore",
+          "lineNumber": 81
+        },
+        {
+          "caller": "scoreEvaluationFunction",
+          "callee": "currentGameState.getScore",
+          "lineNumber": 92
+        },
+        {
+          "caller": "__init__",
+          "callee": "util.lookup",
+          "lineNumber": 112
+        },
+        {
+          "caller": "__init__",
+          "callee": "globals",
+          "lineNumber": 112
+        },
+        {
+          "caller": "__init__",
+          "callee": "int",
+          "lineNumber": 113
+        },
+        {
+          "caller": "getAction",
+          "callee": "util.raiseNotDefined",
+          "lineNumber": 145
+        },
+        {
+          "caller": "getAction",
+          "callee": "util.raiseNotDefined",
+          "lineNumber": 158
+        },
+        {
+          "caller": "getAction",
+          "callee": "util.raiseNotDefined",
+          "lineNumber": 174
+        },
+        {
+          "caller": "betterEvaluationFunction",
+          "callee": "util.raiseNotDefined",
+          "lineNumber": 185
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 7,
+        "functionCount": 2,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "util.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 1260,
+      "nonEmptyLines": 1144,
+      "functions": [
+        {
+          "name": "manhattanDistance",
+          "startLine": 777,
+          "endLine": 779,
+          "params": [
+            "xy1",
+            "xy2"
+          ]
+        },
+        {
+          "name": "raiseNotDefined",
+          "startLine": 1009,
+          "endLine": 1015,
+          "params": []
+        },
+        {
+          "name": "normalize",
+          "startLine": 1018,
+          "endLine": 1037,
+          "params": [
+            "vectorOrCounter"
+          ]
+        },
+        {
+          "name": "nSample",
+          "startLine": 1040,
+          "endLine": 1054,
+          "params": [
+            "distribution",
+            "values",
+            "n"
+          ]
+        },
+        {
+          "name": "sample",
+          "startLine": 1057,
+          "endLine": 1069,
+          "params": [
+            "distribution",
+            "values"
+          ]
+        },
+        {
+          "name": "sampleFromCounter",
+          "startLine": 1072,
+          "endLine": 1074,
+          "params": [
+            "ctr"
+          ]
+        },
+        {
+          "name": "getProbability",
+          "startLine": 1077,
+          "endLine": 1086,
+          "params": [
+            "value",
+            "distribution",
+            "values"
+          ]
+        },
+        {
+          "name": "flipCoin",
+          "startLine": 1089,
+          "endLine": 1091,
+          "params": [
+            "p"
+          ]
+        },
+        {
+          "name": "chooseFromDistribution",
+          "startLine": 1094,
+          "endLine": 1103,
+          "params": [
+            "distribution"
+          ]
+        },
+        {
+          "name": "nearestPoint",
+          "startLine": 1106,
+          "endLine": 1114,
+          "params": [
+            "pos"
+          ]
+        },
+        {
+          "name": "sign",
+          "startLine": 1117,
+          "endLine": 1124,
+          "params": [
+            "x"
+          ]
+        },
+        {
+          "name": "arrayInvert",
+          "startLine": 1127,
+          "endLine": 1135,
+          "params": [
+            "array"
+          ]
+        },
+        {
+          "name": "matrixAsList",
+          "startLine": 1138,
+          "endLine": 1148,
+          "params": [
+            "matrix",
+            "value"
+          ]
+        },
+        {
+          "name": "lookup",
+          "startLine": 1151,
+          "endLine": 1173,
+          "params": [
+            "name",
+            "namespace"
+          ]
+        },
+        {
+          "name": "pause",
+          "startLine": 1176,
+          "endLine": 1181,
+          "params": []
+        },
+        {
+          "name": "mutePrint",
+          "startLine": 1241,
+          "endLine": 1250,
+          "params": []
+        },
+        {
+          "name": "unmutePrint",
+          "startLine": 1253,
+          "endLine": 1260,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "FixedRandom",
+          "startLine": 36,
+          "endLine": 670,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Stack",
+          "startLine": 678,
+          "endLine": 694,
+          "methods": [
+            "__init__",
+            "push",
+            "pop",
+            "isEmpty"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Queue",
+          "startLine": 697,
+          "endLine": 716,
+          "methods": [
+            "__init__",
+            "push",
+            "pop",
+            "isEmpty"
+          ],
+          "properties": []
+        },
+        {
+          "name": "PriorityQueue",
+          "startLine": 719,
+          "endLine": 756,
+          "methods": [
+            "__init__",
+            "push",
+            "pop",
+            "isEmpty",
+            "update"
+          ],
+          "properties": []
+        },
+        {
+          "name": "PriorityQueueWithFunction",
+          "startLine": 759,
+          "endLine": 774,
+          "methods": [
+            "__init__",
+            "push"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Counter",
+          "startLine": 789,
+          "endLine": 1006,
+          "methods": [
+            "__getitem__",
+            "incrementAll",
+            "argMax",
+            "sortedKeys",
+            "totalCount",
+            "normalize",
+            "divideAll",
+            "copy",
+            "__mul__",
+            "__radd__",
+            "__add__",
+            "__sub__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TimeoutFunctionException",
+          "startLine": 1196,
+          "endLine": 1199,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "TimeoutFunction",
+          "startLine": 1202,
+          "endLine": 1228,
+          "methods": [
+            "__init__",
+            "handle_timeout",
+            "__call__"
+          ],
+          "properties": []
+        },
+        {
+          "name": "WritableNull",
+          "startLine": 1236,
+          "endLine": 1238,
+          "methods": [
+            "write"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FixedRandom",
+          "line": 36,
+          "isDefault": false
+        },
+        {
+          "name": "Stack",
+          "line": 678,
+          "isDefault": false
+        },
+        {
+          "name": "Queue",
+          "line": 697,
+          "isDefault": false
+        },
+        {
+          "name": "PriorityQueue",
+          "line": 719,
+          "isDefault": false
+        },
+        {
+          "name": "PriorityQueueWithFunction",
+          "line": 759,
+          "isDefault": false
+        },
+        {
+          "name": "manhattanDistance",
+          "line": 777,
+          "isDefault": false
+        },
+        {
+          "name": "Counter",
+          "line": 789,
+          "isDefault": false
+        },
+        {
+          "name": "raiseNotDefined",
+          "line": 1009,
+          "isDefault": false
+        },
+        {
+          "name": "normalize",
+          "line": 1018,
+          "isDefault": false
+        },
+        {
+          "name": "nSample",
+          "line": 1040,
+          "isDefault": false
+        },
+        {
+          "name": "sample",
+          "line": 1057,
+          "isDefault": false
+        },
+        {
+          "name": "sampleFromCounter",
+          "line": 1072,
+          "isDefault": false
+        },
+        {
+          "name": "getProbability",
+          "line": 1077,
+          "isDefault": false
+        },
+        {
+          "name": "flipCoin",
+          "line": 1089,
+          "isDefault": false
+        },
+        {
+          "name": "chooseFromDistribution",
+          "line": 1094,
+          "isDefault": false
+        },
+        {
+          "name": "nearestPoint",
+          "line": 1106,
+          "isDefault": false
+        },
+        {
+          "name": "sign",
+          "line": 1117,
+          "isDefault": false
+        },
+        {
+          "name": "arrayInvert",
+          "line": 1127,
+          "isDefault": false
+        },
+        {
+          "name": "matrixAsList",
+          "line": 1138,
+          "isDefault": false
+        },
+        {
+          "name": "lookup",
+          "line": 1151,
+          "isDefault": false
+        },
+        {
+          "name": "pause",
+          "line": 1176,
+          "isDefault": false
+        },
+        {
+          "name": "TimeoutFunctionException",
+          "line": 1196,
+          "isDefault": false
+        },
+        {
+          "name": "TimeoutFunction",
+          "line": 1202,
+          "isDefault": false
+        },
+        {
+          "name": "WritableNull",
+          "line": 1236,
+          "isDefault": false
+        },
+        {
+          "name": "mutePrint",
+          "line": 1241,
+          "isDefault": false
+        },
+        {
+          "name": "unmutePrint",
+          "line": 1253,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "random.Random",
+          "lineNumber": 669
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.random.setstate",
+          "lineNumber": 670
+        },
+        {
+          "caller": "push",
+          "callee": "self.list.append",
+          "lineNumber": 686
+        },
+        {
+          "caller": "pop",
+          "callee": "self.list.pop",
+          "lineNumber": 690
+        },
+        {
+          "caller": "isEmpty",
+          "callee": "len",
+          "lineNumber": 694
+        },
+        {
+          "caller": "push",
+          "callee": "self.list.insert",
+          "lineNumber": 705
+        },
+        {
+          "caller": "pop",
+          "callee": "self.list.pop",
+          "lineNumber": 712
+        },
+        {
+          "caller": "isEmpty",
+          "callee": "len",
+          "lineNumber": 716
+        },
+        {
+          "caller": "push",
+          "callee": "heapq.heappush",
+          "lineNumber": 733
+        },
+        {
+          "caller": "pop",
+          "callee": "heapq.heappop",
+          "lineNumber": 737
+        },
+        {
+          "caller": "isEmpty",
+          "callee": "len",
+          "lineNumber": 741
+        },
+        {
+          "caller": "update",
+          "callee": "enumerate",
+          "lineNumber": 747
+        },
+        {
+          "caller": "update",
+          "callee": "self.heap.append",
+          "lineNumber": 752
+        },
+        {
+          "caller": "update",
+          "callee": "heapq.heapify",
+          "lineNumber": 753
+        },
+        {
+          "caller": "update",
+          "callee": "self.push",
+          "lineNumber": 756
+        },
+        {
+          "caller": "__init__",
+          "callee": "PriorityQueue.__init__",
+          "lineNumber": 770
+        },
+        {
+          "caller": "push",
+          "callee": "PriorityQueue.push",
+          "lineNumber": 774
+        },
+        {
+          "caller": "push",
+          "callee": "self.priorityFunction",
+          "lineNumber": 774
+        },
+        {
+          "caller": "manhattanDistance",
+          "callee": "abs",
+          "lineNumber": 779
+        },
+        {
+          "caller": "manhattanDistance",
+          "callee": "abs",
+          "lineNumber": 779
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "self.setdefault",
+          "lineNumber": 831
+        },
+        {
+          "caller": "__getitem__",
+          "callee": "dict.__getitem__",
+          "lineNumber": 832
+        },
+        {
+          "caller": "argMax",
+          "callee": "len",
+          "lineNumber": 852
+        },
+        {
+          "caller": "argMax",
+          "callee": "list",
+          "lineNumber": 852
+        },
+        {
+          "caller": "argMax",
+          "callee": "self.keys",
+          "lineNumber": 852
+        },
+        {
+          "caller": "argMax",
+          "callee": "list",
+          "lineNumber": 854
+        },
+        {
+          "caller": "argMax",
+          "callee": "self.items",
+          "lineNumber": 854
+        },
+        {
+          "caller": "argMax",
+          "callee": "values.index",
+          "lineNumber": 856
+        },
+        {
+          "caller": "argMax",
+          "callee": "max",
+          "lineNumber": 856
+        },
+        {
+          "caller": "sortedKeys",
+          "callee": "list",
+          "lineNumber": 871
+        },
+        {
+          "caller": "sortedKeys",
+          "callee": "self.items",
+          "lineNumber": 871
+        },
+        {
+          "caller": "compare",
+          "callee": "sign",
+          "lineNumber": 874
+        },
+        {
+          "caller": "sortedKeys",
+          "callee": "sortedItems.sort",
+          "lineNumber": 876
+        },
+        {
+          "caller": "totalCount",
+          "callee": "sum",
+          "lineNumber": 883
+        },
+        {
+          "caller": "totalCount",
+          "callee": "self.values",
+          "lineNumber": 883
+        },
+        {
+          "caller": "normalize",
+          "callee": "float",
+          "lineNumber": 892
+        },
+        {
+          "caller": "normalize",
+          "callee": "self.totalCount",
+          "lineNumber": 892
+        },
+        {
+          "caller": "normalize",
+          "callee": "list",
+          "lineNumber": 895
+        },
+        {
+          "caller": "normalize",
+          "callee": "self.keys",
+          "lineNumber": 895
+        },
+        {
+          "caller": "divideAll",
+          "callee": "float",
+          "lineNumber": 902
+        },
+        {
+          "caller": "copy",
+          "callee": "Counter",
+          "lineNumber": 910
+        },
+        {
+          "caller": "copy",
+          "callee": "dict.copy",
+          "lineNumber": 910
+        },
+        {
+          "caller": "__mul__",
+          "callee": "len",
+          "lineNumber": 930
+        },
+        {
+          "caller": "__mul__",
+          "callee": "len",
+          "lineNumber": 930
+        },
+        {
+          "caller": "__radd__",
+          "callee": "list",
+          "lineNumber": 953
+        },
+        {
+          "caller": "__radd__",
+          "callee": "y.items",
+          "lineNumber": 953
+        },
+        {
+          "caller": "__add__",
+          "callee": "Counter",
+          "lineNumber": 970
+        },
+        {
+          "caller": "__sub__",
+          "callee": "Counter",
+          "lineNumber": 996
+        },
+        {
+          "caller": "raiseNotDefined",
+          "callee": "inspect.stack",
+          "lineNumber": 1010
+        },
+        {
+          "caller": "raiseNotDefined",
+          "callee": "inspect.stack",
+          "lineNumber": 1011
+        },
+        {
+          "caller": "raiseNotDefined",
+          "callee": "inspect.stack",
+          "lineNumber": 1012
+        },
+        {
+          "caller": "raiseNotDefined",
+          "callee": "print",
+          "lineNumber": 1014
+        },
+        {
+          "caller": "raiseNotDefined",
+          "callee": "sys.exit",
+          "lineNumber": 1015
+        },
+        {
+          "caller": "normalize",
+          "callee": "Counter",
+          "lineNumber": 1022
+        },
+        {
+          "caller": "normalize",
+          "callee": "type",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "normalize",
+          "callee": "type",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "normalize",
+          "callee": "float",
+          "lineNumber": 1025
+        },
+        {
+          "caller": "normalize",
+          "callee": "counter.totalCount",
+          "lineNumber": 1025
+        },
+        {
+          "caller": "normalize",
+          "callee": "list",
+          "lineNumber": 1028
+        },
+        {
+          "caller": "normalize",
+          "callee": "counter.keys",
+          "lineNumber": 1028
+        },
+        {
+          "caller": "normalize",
+          "callee": "float",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "normalize",
+          "callee": "sum",
+          "lineNumber": 1034
+        },
+        {
+          "caller": "nSample",
+          "callee": "sum",
+          "lineNumber": 1041
+        },
+        {
+          "caller": "nSample",
+          "callee": "normalize",
+          "lineNumber": 1042
+        },
+        {
+          "caller": "nSample",
+          "callee": "random.random",
+          "lineNumber": 1043
+        },
+        {
+          "caller": "nSample",
+          "callee": "range",
+          "lineNumber": 1043
+        },
+        {
+          "caller": "nSample",
+          "callee": "rand.sort",
+          "lineNumber": 1044
+        },
+        {
+          "caller": "nSample",
+          "callee": "samples.append",
+          "lineNumber": 1050
+        },
+        {
+          "caller": "sample",
+          "callee": "type",
+          "lineNumber": 1058
+        },
+        {
+          "caller": "sample",
+          "callee": "sorted",
+          "lineNumber": 1059
+        },
+        {
+          "caller": "sample",
+          "callee": "distribution.items",
+          "lineNumber": 1059
+        },
+        {
+          "caller": "sample",
+          "callee": "sum",
+          "lineNumber": 1062
+        },
+        {
+          "caller": "sample",
+          "callee": "normalize",
+          "lineNumber": 1063
+        },
+        {
+          "caller": "sample",
+          "callee": "random.random",
+          "lineNumber": 1064
+        },
+        {
+          "caller": "sampleFromCounter",
+          "callee": "sorted",
+          "lineNumber": 1073
+        },
+        {
+          "caller": "sampleFromCounter",
+          "callee": "ctr.items",
+          "lineNumber": 1073
+        },
+        {
+          "caller": "sampleFromCounter",
+          "callee": "sample",
+          "lineNumber": 1074
+        },
+        {
+          "caller": "getProbability",
+          "callee": "zip",
+          "lineNumber": 1083
+        },
+        {
+          "caller": "flipCoin",
+          "callee": "random.random",
+          "lineNumber": 1090
+        },
+        {
+          "caller": "chooseFromDistribution",
+          "callee": "type",
+          "lineNumber": 1096
+        },
+        {
+          "caller": "chooseFromDistribution",
+          "callee": "type",
+          "lineNumber": 1096
+        },
+        {
+          "caller": "chooseFromDistribution",
+          "callee": "sample",
+          "lineNumber": 1097
+        },
+        {
+          "caller": "chooseFromDistribution",
+          "callee": "random.random",
+          "lineNumber": 1098
+        },
+        {
+          "caller": "nearestPoint",
+          "callee": "int",
+          "lineNumber": 1112
+        },
+        {
+          "caller": "nearestPoint",
+          "callee": "int",
+          "lineNumber": 1113
+        },
+        {
+          "caller": "arrayInvert",
+          "callee": "range",
+          "lineNumber": 1133
+        },
+        {
+          "caller": "arrayInvert",
+          "callee": "len",
+          "lineNumber": 1133
+        },
+        {
+          "caller": "arrayInvert",
+          "callee": "result[inner].append",
+          "lineNumber": 1134
+        },
+        {
+          "caller": "matrixAsList",
+          "callee": "len",
+          "lineNumber": 1142
+        },
+        {
+          "caller": "matrixAsList",
+          "callee": "len",
+          "lineNumber": 1142
+        },
+        {
+          "caller": "matrixAsList",
+          "callee": "range",
+          "lineNumber": 1144
+        },
+        {
+          "caller": "matrixAsList",
+          "callee": "range",
+          "lineNumber": 1145
+        },
+        {
+          "caller": "matrixAsList",
+          "callee": "cells.append",
+          "lineNumber": 1147
+        },
+        {
+          "caller": "lookup",
+          "callee": "name.count",
+          "lineNumber": 1156
+        },
+        {
+          "caller": "lookup",
+          "callee": "\".\".join",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "lookup",
+          "callee": "name.split",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "lookup",
+          "callee": "name.split",
+          "lineNumber": 1158
+        },
+        {
+          "caller": "lookup",
+          "callee": "__import__",
+          "lineNumber": 1159
+        },
+        {
+          "caller": "lookup",
+          "callee": "getattr",
+          "lineNumber": 1160
+        },
+        {
+          "caller": "lookup",
+          "callee": "list",
+          "lineNumber": 1164
+        },
+        {
+          "caller": "lookup",
+          "callee": "namespace.values",
+          "lineNumber": 1164
+        },
+        {
+          "caller": "lookup",
+          "callee": "str",
+          "lineNumber": 1165
+        },
+        {
+          "caller": "lookup",
+          "callee": "type",
+          "lineNumber": 1165
+        },
+        {
+          "caller": "lookup",
+          "callee": "getattr",
+          "lineNumber": 1167
+        },
+        {
+          "caller": "lookup",
+          "callee": "dir",
+          "lineNumber": 1167
+        },
+        {
+          "caller": "lookup",
+          "callee": "list",
+          "lineNumber": 1168
+        },
+        {
+          "caller": "lookup",
+          "callee": "namespace.items",
+          "lineNumber": 1168
+        },
+        {
+          "caller": "lookup",
+          "callee": "len",
+          "lineNumber": 1169
+        },
+        {
+          "caller": "lookup",
+          "callee": "len",
+          "lineNumber": 1171
+        },
+        {
+          "caller": "lookup",
+          "callee": "Exception",
+          "lineNumber": 1172
+        },
+        {
+          "caller": "lookup",
+          "callee": "Exception",
+          "lineNumber": 1173
+        },
+        {
+          "caller": "pause",
+          "callee": "print",
+          "lineNumber": 1180
+        },
+        {
+          "caller": "pause",
+          "callee": "input",
+          "lineNumber": 1181
+        },
+        {
+          "caller": "handle_timeout",
+          "callee": "TimeoutFunctionException",
+          "lineNumber": 1208
+        },
+        {
+          "caller": "__call__",
+          "callee": "hasattr",
+          "lineNumber": 1214
+        },
+        {
+          "caller": "__call__",
+          "callee": "signal.signal",
+          "lineNumber": 1215
+        },
+        {
+          "caller": "__call__",
+          "callee": "signal.alarm",
+          "lineNumber": 1216
+        },
+        {
+          "caller": "__call__",
+          "callee": "self.function",
+          "lineNumber": 1218
+        },
+        {
+          "caller": "__call__",
+          "callee": "signal.signal",
+          "lineNumber": 1220
+        },
+        {
+          "caller": "__call__",
+          "callee": "signal.alarm",
+          "lineNumber": 1221
+        },
+        {
+          "caller": "__call__",
+          "callee": "time.time",
+          "lineNumber": 1223
+        },
+        {
+          "caller": "__call__",
+          "callee": "self.function",
+          "lineNumber": 1224
+        },
+        {
+          "caller": "__call__",
+          "callee": "time.time",
+          "lineNumber": 1225
+        },
+        {
+          "caller": "__call__",
+          "callee": "self.handle_timeout",
+          "lineNumber": 1227
+        },
+        {
+          "caller": "mutePrint",
+          "callee": "WritableNull",
+          "lineNumber": 1249
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 26,
+        "functionCount": 17,
+        "classCount": 9
+      }
+    }
+  ]
+}

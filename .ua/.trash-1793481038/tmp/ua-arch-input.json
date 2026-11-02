@@ -1,0 +1,356 @@
+{
+  "fileNodes": [
+    {
+      "id": "file:game.py",
+      "type": "file",
+      "name": "game.py",
+      "filePath": "game.py",
+      "summary": "Core game engine for the Pacman AI projects: defines the Agent interface, direction constants, configurations, boolean grids, the game-state data packet, and the Game control loop that solicits actions from agents and applies rules.",
+      "tags": [
+        "game-engine",
+        "simulation",
+        "data-model",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Uses `from util import *` star-imports, so utility helpers (TimeoutFunction, nearestPoint, raiseNotDefined) are resolved at module scope rather than through explicit imports."
+    },
+    {
+      "id": "file:keyboardAgents.py",
+      "type": "file",
+      "name": "keyboardAgents.py",
+      "filePath": "keyboardAgents.py",
+      "summary": "Provides human-controlled Pacman agents that translate keyboard input (WASD/arrow keys, or IJKL for the second player) into legal movement actions.",
+      "tags": [
+        "agent",
+        "input-handling",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:layout.py",
+      "type": "file",
+      "name": "layout.py",
+      "filePath": "layout.py",
+      "summary": "Loads and parses .lay maze files into Layout objects that expose walls, food, capsules and agent start positions, plus the lookup helpers the game and agents use to find layouts.",
+      "tags": [
+        "layout",
+        "parsing",
+        "game-config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pacman.py",
+      "type": "file",
+      "name": "pacman.py",
+      "filePath": "pacman.py",
+      "summary": "Main entry point and rules layer for Pacman: defines the agent-facing GameState, the classic win/lose rules, pacman and ghost movement rules, and the CLI that wires layouts, agents and displays into games.",
+      "tags": [
+        "entry-point",
+        "game-rules",
+        "cli",
+        "game-state"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Agents are discovered dynamically at runtime by importing any *Agents.py module on PYTHONPATH and looking up the class by name, so agent files are not statically imported."
+    },
+    {
+      "id": "file:pacmanAgents.py",
+      "type": "file",
+      "name": "pacmanAgents.py",
+      "filePath": "pacmanAgents.py",
+      "summary": "Baseline Pacman agents: a left-turning agent and a greedy agent that one-step-looks-ahead over legal actions using a pluggable evaluation function.",
+      "tags": [
+        "agent",
+        "baseline",
+        "search"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:ghostAgents.py",
+      "type": "file",
+      "name": "ghostAgents.py",
+      "filePath": "ghostAgents.py",
+      "summary": "Defines the ghost agent policies used during multi-agent search: an abstract GhostAgent plus uniformly random and Pacman-seeking/fleeing DirectionalGhost implementations that expose action probability distributions.",
+      "tags": [
+        "agent-policy",
+        "game-ai",
+        "probability-distribution",
+        "pacman",
+        "search"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:multiAgents.py",
+      "type": "file",
+      "name": "multiAgents.py",
+      "filePath": "multiAgents.py",
+      "summary": "Student implementation file for the adversarial search project, containing the reflex agent, the shared multi-agent search base class, and the Minimax, Alpha-Beta, and Expectimax agent skeletons plus evaluation functions.",
+      "tags": [
+        "adversarial-search",
+        "minimax",
+        "expectimax",
+        "evaluation-function",
+        "assignment-stub"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "Agent classes are selected at runtime by pacman.py via util.lookup, so class names must remain importable module-level symbols."
+    },
+    {
+      "id": "file:util.py",
+      "type": "file",
+      "name": "util.py",
+      "filePath": "util.py",
+      "summary": "Shared utility module providing search data structures (Stack, Queue, PriorityQueue), the Counter distribution class, probability sampling helpers, dynamic name lookup, and timeout/print-suppression helpers used across the Pacman projects.",
+      "tags": [
+        "utility",
+        "data-structures",
+        "priority-queue",
+        "probability",
+        "search"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Counter subclasses dict with a default-zero __getitem__; note sortedKeys uses the Python 2 style `cmp=` argument to sort, a legacy artifact of the course codebase."
+    },
+    {
+      "id": "file:VERSION",
+      "type": "file",
+      "name": "VERSION",
+      "filePath": "VERSION",
+      "summary": "One-line version stamp recording the CS188 project release number (v1.004) that this Pacman codebase corresponds to.",
+      "tags": [
+        "metadata",
+        "versioning",
+        "release-stamp"
+      ],
+      "complexity": "simple",
+      "languageNotes": "Plain-text single-token file with no parser support; it is read verbatim by release tooling rather than parsed as source code."
+    },
+    {
+      "id": "file:projectParams.py",
+      "type": "file",
+      "name": "projectParams.py",
+      "filePath": "projectParams.py",
+      "summary": "Project-wide configuration module that tells the autograder which student file to grade, which test-class module to load, the human-readable project name, and whether bonus questions are enabled.",
+      "tags": [
+        "configuration",
+        "grading",
+        "constants",
+        "autograder"
+      ],
+      "complexity": "simple",
+      "languageNotes": "A pure Python constants module: no imports, functions, or classes, only four uppercase module-level assignments that other modules read via attribute access."
+    }
+  ],
+  "importEdges": [
+    {
+      "source": "file:game.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:keyboardAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:layout.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:layout.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacman.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacman.py",
+      "target": "file:layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacman.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacmanAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacmanAgents.py",
+      "target": "file:pacman.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacmanAgents.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:ghostAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:ghostAgents.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:multiAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:multiAgents.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ],
+  "allEdges": [
+    {
+      "source": "file:game.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:keyboardAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:layout.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:layout.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacman.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacman.py",
+      "target": "file:layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacman.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacmanAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacmanAgents.py",
+      "target": "file:pacman.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:pacmanAgents.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:ghostAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:ghostAgents.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:multiAgents.py",
+      "target": "file:game.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:multiAgents.py",
+      "target": "file:util.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:projectParams.py",
+      "target": "file:multiAgents.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

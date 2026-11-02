@@ -1,0 +1,85 @@
+[
+  {
+    "order": 1,
+    "title": "Project Overview and Command-Line Entry",
+    "description": "There is no README here, so the tour starts where the program does: pacman.py is both the executable entry point and the rules layer. Its CLI accepts a layout (-l), an agent class (-p) and comma-separated agent arguments (-a depth=2), resolves the layout, instantiates the requested pacman and ghost agents, and hands everything to runGames for one or many episodes. Reading this file first shows you the full wiring diagram of the teaching harness before any of the search logic matters.",
+    "nodeIds": ["file:pacman.py"],
+    "languageLesson": "Agent classes are not imported at the top of pacman.py; loadAgent dynamically imports any *Agents.py module found on PYTHONPATH and returns the class by name. That is why you can pass -p MinimaxAgent without editing the entry point, and why a typo in an agent name fails at runtime rather than at import time."
+  },
+  {
+    "order": 2,
+    "title": "The Game Engine and Agent Interface",
+    "description": "game.py is the simulation core that every agent plugs into. It defines the Agent base class, whose getAction is the single method subclasses must override, plus the direction constants, hashable Configuration positions, boolean Grid, GameStateData packet, and the Game control loop that enforces per-agent timeouts, catches agent exceptions, applies successors and asks the rules whether the game is won or lost. Understanding this loop explains why an agent's only job is to return an action quickly from the state it is given.",
+    "nodeIds": ["file:game.py"],
+    "languageLesson": "Python has no interface keyword: game.py enforces the agent contract by convention, defining getAction on a base class that raises until a subclass overrides it. Any object with a compatible getAction can be passed to Game, which is duck typing in practice."
+  },
+  {
+    "order": 3,
+    "title": "Shared Foundations: Data Structures and Utilities",
+    "description": "util.py is the most widely imported module in the project because everything else leans on it. It supplies the Stack, Queue and PriorityQueue search containers, the Counter distribution type used for probabilistic ghost actions, sampling helpers such as sample and chooseFromDistribution, the manhattanDistance heuristic, dynamic name resolution via lookup, and TimeoutFunction for enforcing agent time limits. Skim this before the search agents: their code reads much more clearly once you know Counter is a dict of weights and PriorityQueue is heap-backed.",
+    "nodeIds": ["file:util.py"],
+    "languageLesson": "Counter subclasses dict and overrides missing-key access to return zero, so probability code can do dist[action] += p without initializing every action first. PriorityQueue wraps heapq and adds an insertion counter so equal priorities never compare the payload objects themselves."
+  },
+  {
+    "order": 4,
+    "title": "Maze Layouts and Board Parsing",
+    "description": "layout.py turns the plain-text .lay maze files into the Layout objects the engine and agents consume. It parses wall and food grids, records capsule and agent start positions, and exposes helpers for corners, visibility and random placement, while getLayout searches the layouts directory and parent directories for a named file. This is the data source behind every board you see when you run mediumClassic or smallGrid.",
+    "nodeIds": ["file:layout.py"],
+    "languageLesson": "Layout parsing is a good example of a text grid DSL: each character in the .lay file has a fixed meaning (% walls, . food, o capsules, P and G spawn points), so a small character-to-grid translation replaces an entire binary map format."
+  },
+  {
+    "order": 5,
+    "title": "Game State, Rules, and Successors",
+    "description": "Returning to pacman.py, this step focuses on the half that search agents actually touch: GameState, the agent-facing view with accessors for food, capsules, walls, pacman and ghost states plus generateSuccessor, which copies the state, applies an action and resolves collisions. Around it sit PacmanRules and GhostRules for legal moves, food and capsule scoring, scared-timer decay and death detection, and ClassicGameRules for win/lose and per-agent time budgets. Every minimax or expectimax node you write later is just a call to getLegalActions and generateSuccessor on this class.",
+    "nodeIds": ["file:pacman.py"],
+    "languageLesson": "generateSuccessor clones the state before mutating it, which is what makes game-tree search safe: an agent can explore thousands of hypothetical futures without disturbing the real game. In Python that copy is usually copy.deepcopy, so state objects must stay free of uncopyable resources."
+  },
+  {
+    "order": 6,
+    "title": "The Adversarial Search Surface",
+    "description": "multiAgents.py is the assignment's student implementation file and the heart of this tour. It holds ReflexAgent, which scores each legal action one ply deep and randomly breaks ties, and MultiAgentSearchAgent, the shared base class that records Pacman's agent index, resolves the evaluation function by name through util.lookup and parses the search depth from -a. The Minimax, Alpha-Beta and Expectimax skeletons all extend that base, so this step establishes the contract the next four steps fill in.",
+    "nodeIds": ["file:multiAgents.py"],
+    "languageLesson": "MultiAgentSearchAgent resolves its evaluation function with util.lookup, so passing -a evalFn=better makes the harness import and bind a function by dotted name. This string-to-callable indirection lets the autograder swap scoring functions without touching agent code."
+  },
+  {
+    "order": 7,
+    "title": "Minimax: Modeling the Adversary",
+    "description": "MinimaxAgent carries the classic alternating max/min search: Pacman maximizes, each ghost minimizes, and one full round of all agents counts as a single ply of the configured depth. The recursion walks the agent index modulo the number of agents so the same routine handles Pacman and every ghost, and it stops at the depth limit or a terminal win/lose state, returning the evaluation score. This is the reference implementation whose answers Alpha-Beta must reproduce exactly.",
+    "nodeIds": ["file:multiAgents.py"],
+    "languageLesson": "The agent index is advanced with (agentIndex + 1) % numAgents, a common trick for cycling through players in turn-based games without writing a branch per ghost. The depth counter only decrements when the turn wraps back to Pacman."
+  },
+  {
+    "order": 8,
+    "title": "Alpha-Beta Pruning",
+    "description": "AlphaBetaAgent is the same minimax search with pruning: it threads alpha and beta bounds down the tree and stops exploring a branch as soon as the running value proves that branch cannot change the decision above it. The result is identical to MinimaxAgent's chosen action but with far fewer generateSuccessor calls, which matters because the engine gives each agent a strict time budget. Comparing this file against the previous step is the fastest way to see why pruning is safe.",
+    "nodeIds": ["file:multiAgents.py"],
+    "languageLesson": "Alpha is the best value the maximizer can already guarantee and beta the best the minimizer can guarantee. Pruning is valid only when you compare with strict inequalities at the right nodes; mixing up <= and < is the classic source of subtly wrong alpha-beta implementations."
+  },
+  {
+    "order": 9,
+    "title": "Expectimax: Probabilistic Ghosts",
+    "description": "ExpectimaxAgent replaces the ghosts' minimizing nodes with expectation nodes, averaging over the legal actions because ghosts are assumed to move uniformly at random rather than adversarially. Pacman still maximizes, so the tree mixes max nodes and chance nodes, and the returned value is an expected score rather than a worst-case guarantee. This is the model that pairs naturally with the random ghost policies in ghostAgents.py and usually produces less paranoid, higher-scoring play.",
+    "nodeIds": ["file:multiAgents.py"],
+    "languageLesson": "Chance nodes compute a weighted average instead of a min or max: value = sum(p(a) * value(successor(a))). Keeping probabilities normalized (as util.normalize does) is what makes the expectation meaningful."
+  },
+  {
+    "order": 10,
+    "title": "Evaluation Functions and State Scoring",
+    "description": "Search only reaches a fixed depth, so the leaf values decide how good the agent actually is. multiAgents.py ships scoreEvaluationFunction, a trivial baseline that returns the current game score, and betterEvaluationFunction, aliased as better at the bottom of the module, as the place for a richer feature-based heuristic. A strong evaluation typically combines food distance, capsule availability, ghost proximity and remaining scared time, all computed from the GameState accessors introduced in Step 5.",
+    "nodeIds": ["file:multiAgents.py"],
+    "languageLesson": "The module-level alias better = betterEvaluationFunction exists so the CLI can say -a evalFn=better. Python functions are first-class objects, so binding a short name to one is all the indirection the harness needs."
+  },
+  {
+    "order": 11,
+    "title": "Alternative Agent Policies",
+    "description": "These three modules are the comparison baselines and human-play controls loaded by name through the same -p flag. pacmanAgents.py offers LeftTurnAgent and a one-ply GreedyAgent with a pluggable scoring function, ghostAgents.py defines the abstract GhostAgent plus RandomGhost and the Pacman-seeking or fleeing DirectionalGhost that return action distributions, and keyboardAgents.py maps WASD and IJKL input to legal moves for interactive play. Seeing them side by side shows the range of the Agent contract, from a hard-coded policy to a sampled probability distribution.",
+    "nodeIds": ["file:pacmanAgents.py", "file:ghostAgents.py", "file:keyboardAgents.py"],
+    "languageLesson": "GhostAgent.getAction samples from the Counter returned by getDistribution using util.chooseFromDistribution. Separating policy (the distribution) from sampling lets you swap in a deterministic ghost for testing or a stochastic one for realism without changing the caller."
+  },
+  {
+    "order": 12,
+    "title": "Project Metadata and Autograder Configuration",
+    "description": "The last stop is course-harness plumbing rather than game logic. projectParams.py tells the autograder which student file to grade, which test-class module to load, the human-readable project name and whether bonus questions are enabled, while VERSION is a one-line stamp recording the CS188 release (v1.004) this codebase corresponds to. Together they explain how your multiAgents.py work is discovered and scored, and they are the files to check if grading behaves unexpectedly.",
+    "nodeIds": ["file:projectParams.py", "file:VERSION"]
+  }
+]

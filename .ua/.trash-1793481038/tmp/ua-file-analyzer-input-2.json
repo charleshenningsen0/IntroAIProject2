@@ -1,0 +1,13 @@
+{
+  "projectRoot": "/Users/charleshenningsen/Desktop/Artificial Intelligence/project2-1",
+  "batchFiles": [
+    {"path": "ghostAgents.py", "language": "python", "sizeLines": 95, "fileCategory": "code"},
+    {"path": "multiAgents.py", "language": "python", "sizeLines": 189, "fileCategory": "code"},
+    {"path": "util.py", "language": "python", "sizeLines": 1260, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "ghostAgents.py": ["game.py", "util.py"],
+    "multiAgents.py": ["game.py", "util.py"],
+    "util.py": []
+  }
+}

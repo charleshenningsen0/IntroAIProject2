@@ -1,0 +1,2961 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "game.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 830,
+      "nonEmptyLines": 708,
+      "functions": [
+        {
+          "name": "reconstituteGrid",
+          "startLine": 293,
+          "endLine": 297,
+          "params": [
+            "bitRep"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Agent",
+          "startLine": 35,
+          "endLine": 51,
+          "methods": [
+            "__init__",
+            "getAction"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Directions",
+          "startLine": 54,
+          "endLine": 65,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "Configuration",
+          "startLine": 68,
+          "endLine": 117,
+          "methods": [
+            "__init__",
+            "getPosition",
+            "getDirection",
+            "isInteger",
+            "__eq__",
+            "__hash__",
+            "__str__",
+            "generateSuccessor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "AgentState",
+          "startLine": 120,
+          "endLine": 165,
+          "methods": [
+            "__init__",
+            "__str__",
+            "__eq__",
+            "__hash__",
+            "copy",
+            "getPosition",
+            "getDirection"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Grid",
+          "startLine": 168,
+          "endLine": 290,
+          "methods": [
+            "__init__",
+            "__getitem__",
+            "__setitem__",
+            "__str__",
+            "__eq__",
+            "__hash__",
+            "copy",
+            "deepCopy",
+            "shallowCopy",
+            "count",
+            "asList",
+            "packBits",
+            "_cellIndexToPosition",
+            "_unpackBits",
+            "_unpackInt"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Actions",
+          "startLine": 305,
+          "endLine": 405,
+          "methods": [
+            "reverseDirection",
+            "vectorToDirection",
+            "directionToVector",
+            "getPossibleActions",
+            "getLegalNeighbors",
+            "getSuccessor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "GameStateData",
+          "startLine": 408,
+          "endLine": 558,
+          "methods": [
+            "__init__",
+            "deepCopy",
+            "copyAgentStates",
+            "__eq__",
+            "__hash__",
+            "__str__",
+            "_foodWallStr",
+            "_pacStr",
+            "_ghostStr",
+            "initialize"
+          ],
+          "properties": []
+        },
+        {
+          "name": "Game",
+          "startLine": 569,
+          "endLine": 830,
+          "methods": [
+            "__init__",
+            "getProgress",
+            "_agentCrash",
+            "mute",
+            "unmute",
+            "run"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Agent",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "Directions",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "Configuration",
+          "line": 68,
+          "isDefault": false
+        },
+        {
+          "name": "AgentState",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "Grid",
+          "line": 168,
+          "isDefault": false
+        },
+        {
+          "name": "reconstituteGrid",
+          "line": 293,
+          "isDefault": false
+        },
+        {
+          "name": "Actions",
+          "line": 305,
+          "isDefault": false
+        },
+        {
+          "name": "GameStateData",
+          "line": 408,
+          "isDefault": false
+        },
+        {
+          "name": "Game",
+          "line": 569,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAction",
+          "callee": "raiseNotDefined",
+          "lineNumber": 51
+        },
+        {
+          "caller": "isInteger",
+          "callee": "int",
+          "lineNumber": 89
+        },
+        {
+          "caller": "isInteger",
+          "callee": "int",
+          "lineNumber": 89
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 97
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 98
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 99
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 102
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 102
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "Actions.vectorToDirection",
+          "lineNumber": 114
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "Configuration",
+          "lineNumber": 117
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 136
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 138
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 149
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 149
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 149
+        },
+        {
+          "caller": "copy",
+          "callee": "AgentState",
+          "lineNumber": 152
+        },
+        {
+          "caller": "getPosition",
+          "callee": "self.configuration.getPosition",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getDirection",
+          "callee": "self.configuration.getDirection",
+          "lineNumber": 165
+        },
+        {
+          "caller": "__init__",
+          "callee": "Exception",
+          "lineNumber": 179
+        },
+        {
+          "caller": "__init__",
+          "callee": "range",
+          "lineNumber": 184
+        },
+        {
+          "caller": "__init__",
+          "callee": "range",
+          "lineNumber": 184
+        },
+        {
+          "caller": "__init__",
+          "callee": "self._unpackBits",
+          "lineNumber": 186
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 196
+        },
+        {
+          "caller": "__str__",
+          "callee": "range",
+          "lineNumber": 196
+        },
+        {
+          "caller": "__str__",
+          "callee": "range",
+          "lineNumber": 197
+        },
+        {
+          "caller": "__str__",
+          "callee": "out.reverse",
+          "lineNumber": 199
+        },
+        {
+          "caller": "__str__",
+          "callee": "\"\\n\".join",
+          "lineNumber": 200
+        },
+        {
+          "caller": "__str__",
+          "callee": "\"\".join",
+          "lineNumber": 200
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 216
+        },
+        {
+          "caller": "copy",
+          "callee": "Grid",
+          "lineNumber": 219
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "self.copy",
+          "lineNumber": 224
+        },
+        {
+          "caller": "shallowCopy",
+          "callee": "Grid",
+          "lineNumber": 227
+        },
+        {
+          "caller": "count",
+          "callee": "sum",
+          "lineNumber": 232
+        },
+        {
+          "caller": "count",
+          "callee": "x.count",
+          "lineNumber": 232
+        },
+        {
+          "caller": "asList",
+          "callee": "range",
+          "lineNumber": 236
+        },
+        {
+          "caller": "asList",
+          "callee": "range",
+          "lineNumber": 237
+        },
+        {
+          "caller": "asList",
+          "callee": "list.append",
+          "lineNumber": 239
+        },
+        {
+          "caller": "packBits",
+          "callee": "range",
+          "lineNumber": 250
+        },
+        {
+          "caller": "packBits",
+          "callee": "self._cellIndexToPosition",
+          "lineNumber": 252
+        },
+        {
+          "caller": "packBits",
+          "callee": "bits.append",
+          "lineNumber": 256
+        },
+        {
+          "caller": "packBits",
+          "callee": "bits.append",
+          "lineNumber": 258
+        },
+        {
+          "caller": "packBits",
+          "callee": "tuple",
+          "lineNumber": 259
+        },
+        {
+          "caller": "_unpackBits",
+          "callee": "self._unpackInt",
+          "lineNumber": 272
+        },
+        {
+          "caller": "_unpackBits",
+          "callee": "self._cellIndexToPosition",
+          "lineNumber": 275
+        },
+        {
+          "caller": "_unpackInt",
+          "callee": "ValueError",
+          "lineNumber": 282
+        },
+        {
+          "caller": "_unpackInt",
+          "callee": "range",
+          "lineNumber": 283
+        },
+        {
+          "caller": "_unpackInt",
+          "callee": "bools.append",
+          "lineNumber": 286
+        },
+        {
+          "caller": "_unpackInt",
+          "callee": "bools.append",
+          "lineNumber": 289
+        },
+        {
+          "caller": "reconstituteGrid",
+          "callee": "type",
+          "lineNumber": 294
+        },
+        {
+          "caller": "reconstituteGrid",
+          "callee": "type",
+          "lineNumber": 294
+        },
+        {
+          "caller": "reconstituteGrid",
+          "callee": "Grid",
+          "lineNumber": 297
+        },
+        {
+          "caller": "getPossibleActions",
+          "callee": "int",
+          "lineNumber": 365
+        },
+        {
+          "caller": "getPossibleActions",
+          "callee": "int",
+          "lineNumber": 365
+        },
+        {
+          "caller": "getPossibleActions",
+          "callee": "abs",
+          "lineNumber": 368
+        },
+        {
+          "caller": "getPossibleActions",
+          "callee": "abs",
+          "lineNumber": 368
+        },
+        {
+          "caller": "getPossibleActions",
+          "callee": "config.getDirection",
+          "lineNumber": 369
+        },
+        {
+          "caller": "getPossibleActions",
+          "callee": "possible.append",
+          "lineNumber": 376
+        },
+        {
+          "caller": "getLegalNeighbors",
+          "callee": "int",
+          "lineNumber": 384
+        },
+        {
+          "caller": "getLegalNeighbors",
+          "callee": "int",
+          "lineNumber": 384
+        },
+        {
+          "caller": "getLegalNeighbors",
+          "callee": "neighbors.append",
+          "lineNumber": 395
+        },
+        {
+          "caller": "getSuccessor",
+          "callee": "Actions.directionToVector",
+          "lineNumber": 401
+        },
+        {
+          "caller": "__init__",
+          "callee": "prevState.food.shallowCopy",
+          "lineNumber": 414
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.copyAgentStates",
+          "lineNumber": 416
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "GameStateData",
+          "lineNumber": 430
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "self.food.deepCopy",
+          "lineNumber": 431
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "self.layout.deepCopy",
+          "lineNumber": 432
+        },
+        {
+          "caller": "copyAgentStates",
+          "callee": "copiedStates.append",
+          "lineNumber": 442
+        },
+        {
+          "caller": "copyAgentStates",
+          "callee": "agentState.copy",
+          "lineNumber": 442
+        },
+        {
+          "caller": "__hash__",
+          "callee": "enumerate",
+          "lineNumber": 466
+        },
+        {
+          "caller": "__hash__",
+          "callee": "int",
+          "lineNumber": 468
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 468
+        },
+        {
+          "caller": "__hash__",
+          "callee": "print",
+          "lineNumber": 470
+        },
+        {
+          "caller": "__hash__",
+          "callee": "int",
+          "lineNumber": 472
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 474
+        },
+        {
+          "caller": "__hash__",
+          "callee": "tuple",
+          "lineNumber": 474
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 475
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 476
+        },
+        {
+          "caller": "__hash__",
+          "callee": "tuple",
+          "lineNumber": 476
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 477
+        },
+        {
+          "caller": "__str__",
+          "callee": "Grid",
+          "lineNumber": 484
+        },
+        {
+          "caller": "__str__",
+          "callee": "type",
+          "lineNumber": 485
+        },
+        {
+          "caller": "__str__",
+          "callee": "type",
+          "lineNumber": 485
+        },
+        {
+          "caller": "__str__",
+          "callee": "reconstituteGrid",
+          "lineNumber": 486
+        },
+        {
+          "caller": "__str__",
+          "callee": "range",
+          "lineNumber": 487
+        },
+        {
+          "caller": "__str__",
+          "callee": "range",
+          "lineNumber": 488
+        },
+        {
+          "caller": "__str__",
+          "callee": "self._foodWallStr",
+          "lineNumber": 490
+        },
+        {
+          "caller": "__str__",
+          "callee": "int",
+          "lineNumber": 497
+        },
+        {
+          "caller": "__str__",
+          "callee": "nearestPoint",
+          "lineNumber": 497
+        },
+        {
+          "caller": "__str__",
+          "callee": "self._pacStr",
+          "lineNumber": 500
+        },
+        {
+          "caller": "__str__",
+          "callee": "self._ghostStr",
+          "lineNumber": 502
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 507
+        },
+        {
+          "caller": "initialize",
+          "callee": "layout.food.copy",
+          "lineNumber": 540
+        },
+        {
+          "caller": "initialize",
+          "callee": "self.agentStates.append",
+          "lineNumber": 555
+        },
+        {
+          "caller": "initialize",
+          "callee": "AgentState",
+          "lineNumber": 556
+        },
+        {
+          "caller": "initialize",
+          "callee": "Configuration",
+          "lineNumber": 556
+        },
+        {
+          "caller": "__init__",
+          "callee": "io.StringIO",
+          "lineNumber": 597
+        },
+        {
+          "caller": "getProgress",
+          "callee": "self.rules.getProgress",
+          "lineNumber": 603
+        },
+        {
+          "caller": "_agentCrash",
+          "callee": "traceback.print_exc",
+          "lineNumber": 608
+        },
+        {
+          "caller": "_agentCrash",
+          "callee": "self.rules.agentCrash",
+          "lineNumber": 611
+        },
+        {
+          "caller": "run",
+          "callee": "self.display.initialize",
+          "lineNumber": 639
+        },
+        {
+          "caller": "run",
+          "callee": "range",
+          "lineNumber": 644
+        },
+        {
+          "caller": "run",
+          "callee": "len",
+          "lineNumber": 644
+        },
+        {
+          "caller": "run",
+          "callee": "self.mute",
+          "lineNumber": 647
+        },
+        {
+          "caller": "run",
+          "callee": "print",
+          "lineNumber": 650
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 651
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 652
+        },
+        {
+          "caller": "run",
+          "callee": "dir",
+          "lineNumber": 654
+        },
+        {
+          "caller": "run",
+          "callee": "self.mute",
+          "lineNumber": 655
+        },
+        {
+          "caller": "run",
+          "callee": "TimeoutFunction",
+          "lineNumber": 658
+        },
+        {
+          "caller": "run",
+          "callee": "int",
+          "lineNumber": 660
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.getMaxStartupTime",
+          "lineNumber": 660
+        },
+        {
+          "caller": "run",
+          "callee": "time.time",
+          "lineNumber": 663
+        },
+        {
+          "caller": "run",
+          "callee": "timed_func",
+          "lineNumber": 664
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.deepCopy",
+          "lineNumber": 664
+        },
+        {
+          "caller": "run",
+          "callee": "time.time",
+          "lineNumber": 665
+        },
+        {
+          "caller": "run",
+          "callee": "print",
+          "lineNumber": 668
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 672
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 674
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 677
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 678
+        },
+        {
+          "caller": "run",
+          "callee": "agent.registerInitialState",
+          "lineNumber": 681
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.deepCopy",
+          "lineNumber": 681
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 683
+        },
+        {
+          "caller": "run",
+          "callee": "len",
+          "lineNumber": 686
+        },
+        {
+          "caller": "run",
+          "callee": "dir",
+          "lineNumber": 694
+        },
+        {
+          "caller": "run",
+          "callee": "self.mute",
+          "lineNumber": 695
+        },
+        {
+          "caller": "run",
+          "callee": "TimeoutFunction",
+          "lineNumber": 698
+        },
+        {
+          "caller": "run",
+          "callee": "int",
+          "lineNumber": 700
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.getMoveTimeout",
+          "lineNumber": 700
+        },
+        {
+          "caller": "run",
+          "callee": "time.time",
+          "lineNumber": 703
+        },
+        {
+          "caller": "run",
+          "callee": "timed_func",
+          "lineNumber": 704
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.deepCopy",
+          "lineNumber": 704
+        },
+        {
+          "caller": "run",
+          "callee": "time.time",
+          "lineNumber": 707
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 708
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 710
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 711
+        },
+        {
+          "caller": "run",
+          "callee": "agent.observationFunction",
+          "lineNumber": 714
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.deepCopy",
+          "lineNumber": 714
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 715
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.deepCopy",
+          "lineNumber": 717
+        },
+        {
+          "caller": "run",
+          "callee": "self.mute",
+          "lineNumber": 721
+        },
+        {
+          "caller": "run",
+          "callee": "TimeoutFunction",
+          "lineNumber": 724
+        },
+        {
+          "caller": "run",
+          "callee": "int",
+          "lineNumber": 726
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.getMoveTimeout",
+          "lineNumber": 726
+        },
+        {
+          "caller": "run",
+          "callee": "int",
+          "lineNumber": 726
+        },
+        {
+          "caller": "run",
+          "callee": "time.time",
+          "lineNumber": 729
+        },
+        {
+          "caller": "run",
+          "callee": "TimeoutFunctionException",
+          "lineNumber": 731
+        },
+        {
+          "caller": "run",
+          "callee": "timed_func",
+          "lineNumber": 732
+        },
+        {
+          "caller": "run",
+          "callee": "print",
+          "lineNumber": 734
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 739
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 740
+        },
+        {
+          "caller": "run",
+          "callee": "time.time",
+          "lineNumber": 743
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.getMoveWarningTime",
+          "lineNumber": 745
+        },
+        {
+          "caller": "run",
+          "callee": "print",
+          "lineNumber": 747
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.getMaxTimeWarnings",
+          "lineNumber": 754
+        },
+        {
+          "caller": "run",
+          "callee": "print",
+          "lineNumber": 755
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 761
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 762
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.getMaxTotalTime",
+          "lineNumber": 767
+        },
+        {
+          "caller": "run",
+          "callee": "print",
+          "lineNumber": 770
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 776
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 777
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 779
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 781
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 782
+        },
+        {
+          "caller": "run",
+          "callee": "agent.getAction",
+          "lineNumber": 785
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 786
+        },
+        {
+          "caller": "run",
+          "callee": "self.moveHistory.append",
+          "lineNumber": 789
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.generateSuccessor",
+          "lineNumber": 792
+        },
+        {
+          "caller": "run",
+          "callee": "self.mute",
+          "lineNumber": 794
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 795
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 796
+        },
+        {
+          "caller": "run",
+          "callee": "self.state.generateSuccessor",
+          "lineNumber": 799
+        },
+        {
+          "caller": "run",
+          "callee": "self.display.update",
+          "lineNumber": 802
+        },
+        {
+          "caller": "run",
+          "callee": "self.rules.process",
+          "lineNumber": 807
+        },
+        {
+          "caller": "run",
+          "callee": "boinc.set_fraction_done",
+          "lineNumber": 815
+        },
+        {
+          "caller": "run",
+          "callee": "self.getProgress",
+          "lineNumber": 815
+        },
+        {
+          "caller": "run",
+          "callee": "enumerate",
+          "lineNumber": 818
+        },
+        {
+          "caller": "run",
+          "callee": "dir",
+          "lineNumber": 819
+        },
+        {
+          "caller": "run",
+          "callee": "self.mute",
+          "lineNumber": 821
+        },
+        {
+          "caller": "run",
+          "callee": "agent.final",
+          "lineNumber": 822
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 823
+        },
+        {
+          "caller": "run",
+          "callee": "self._agentCrash",
+          "lineNumber": 827
+        },
+        {
+          "caller": "run",
+          "callee": "self.unmute",
+          "lineNumber": 828
+        },
+        {
+          "caller": "run",
+          "callee": "self.display.finish",
+          "lineNumber": 830
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 9,
+        "functionCount": 1,
+        "classCount": 8
+      }
+    },
+    {
+      "path": "keyboardAgents.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 85,
+      "classes": [
+        {
+          "name": "KeyboardAgent",
+          "startLine": 20,
+          "endLine": 80,
+          "methods": [
+            "__init__",
+            "getAction",
+            "getMove"
+          ],
+          "properties": []
+        },
+        {
+          "name": "KeyboardAgent2",
+          "startLine": 83,
+          "endLine": 105,
+          "methods": [
+            "getMove"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "KeyboardAgent",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "KeyboardAgent2",
+          "line": 83,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAction",
+          "callee": "keys_waiting",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getAction",
+          "callee": "keys_pressed",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getAction",
+          "callee": "state.getLegalActions",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getAction",
+          "callee": "self.getMove",
+          "lineNumber": 46
+        },
+        {
+          "caller": "getAction",
+          "callee": "random.choice",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 0,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "layout.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "getLayout",
+          "startLine": 166,
+          "endLine": 180,
+          "params": [
+            "name",
+            "back"
+          ]
+        },
+        {
+          "name": "tryToLoad",
+          "startLine": 183,
+          "endLine": 190,
+          "params": [
+            "fullname"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "Layout",
+          "startLine": 25,
+          "endLine": 163,
+          "methods": [
+            "__init__",
+            "getNumGhosts",
+            "initializeVisibilityMatrix",
+            "isWall",
+            "getRandomLegalPosition",
+            "getRandomCorner",
+            "getFurthestCorner",
+            "isVisibleFrom",
+            "__str__",
+            "deepCopy",
+            "processLayoutText",
+            "processLayoutChar"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "Layout",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "getLayout",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "tryToLoad",
+          "line": 183,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 31
+        },
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "Grid",
+          "lineNumber": 33
+        },
+        {
+          "caller": "__init__",
+          "callee": "Grid",
+          "lineNumber": 34
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.processLayoutText",
+          "lineNumber": 38
+        },
+        {
+          "caller": "__init__",
+          "callee": "len",
+          "lineNumber": 40
+        },
+        {
+          "caller": "__init__",
+          "callee": "self.food.asList",
+          "lineNumber": 40
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "reduce",
+          "lineNumber": 48
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "Grid",
+          "lineNumber": 58
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "set",
+          "lineNumber": 62
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "set",
+          "lineNumber": 63
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "set",
+          "lineNumber": 64
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "set",
+          "lineNumber": 65
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "set",
+          "lineNumber": 66
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "range",
+          "lineNumber": 69
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "range",
+          "lineNumber": 70
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "zip",
+          "lineNumber": 72
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "int",
+          "lineNumber": 75
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "int",
+          "lineNumber": 75
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "int",
+          "lineNumber": 77
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "int",
+          "lineNumber": 77
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "vis[x][y][direction].add",
+          "lineNumber": 78
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "reduce",
+          "lineNumber": 81
+        },
+        {
+          "caller": "initializeVisibilityMatrix",
+          "callee": "reduce",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "random.choice",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "list",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "range",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "random.choice",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "list",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "range",
+          "lineNumber": 93
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "self.isWall",
+          "lineNumber": 94
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "random.choice",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "list",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "range",
+          "lineNumber": 95
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "random.choice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "list",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRandomLegalPosition",
+          "callee": "range",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getRandomCorner",
+          "callee": "random.choice",
+          "lineNumber": 106
+        },
+        {
+          "caller": "getFurthestCorner",
+          "callee": "max",
+          "lineNumber": 115
+        },
+        {
+          "caller": "getFurthestCorner",
+          "callee": "manhattanDistance",
+          "lineNumber": 115
+        },
+        {
+          "caller": "isVisibleFrom",
+          "callee": "int",
+          "lineNumber": 119
+        },
+        {
+          "caller": "__str__",
+          "callee": "\"\\n\".join",
+          "lineNumber": 123
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "Layout",
+          "lineNumber": 126
+        },
+        {
+          "caller": "processLayoutText",
+          "callee": "range",
+          "lineNumber": 142
+        },
+        {
+          "caller": "processLayoutText",
+          "callee": "range",
+          "lineNumber": 143
+        },
+        {
+          "caller": "processLayoutText",
+          "callee": "self.processLayoutChar",
+          "lineNumber": 145
+        },
+        {
+          "caller": "processLayoutText",
+          "callee": "self.agentPositions.sort",
+          "lineNumber": 146
+        },
+        {
+          "caller": "processLayoutChar",
+          "callee": "self.capsules.append",
+          "lineNumber": 155
+        },
+        {
+          "caller": "processLayoutChar",
+          "callee": "self.agentPositions.append",
+          "lineNumber": 157
+        },
+        {
+          "caller": "processLayoutChar",
+          "callee": "self.agentPositions.append",
+          "lineNumber": 159
+        },
+        {
+          "caller": "processLayoutChar",
+          "callee": "self.agentPositions.append",
+          "lineNumber": 162
+        },
+        {
+          "caller": "processLayoutChar",
+          "callee": "int",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getLayout",
+          "callee": "name.endswith",
+          "lineNumber": 167
+        },
+        {
+          "caller": "getLayout",
+          "callee": "tryToLoad",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getLayout",
+          "callee": "tryToLoad",
+          "lineNumber": 170
+        },
+        {
+          "caller": "getLayout",
+          "callee": "tryToLoad",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getLayout",
+          "callee": "tryToLoad",
+          "lineNumber": 174
+        },
+        {
+          "caller": "getLayout",
+          "callee": "os.path.abspath",
+          "lineNumber": 176
+        },
+        {
+          "caller": "getLayout",
+          "callee": "os.chdir",
+          "lineNumber": 177
+        },
+        {
+          "caller": "getLayout",
+          "callee": "getLayout",
+          "lineNumber": 178
+        },
+        {
+          "caller": "getLayout",
+          "callee": "os.chdir",
+          "lineNumber": 179
+        },
+        {
+          "caller": "tryToLoad",
+          "callee": "os.path.exists",
+          "lineNumber": 184
+        },
+        {
+          "caller": "tryToLoad",
+          "callee": "open",
+          "lineNumber": 186
+        },
+        {
+          "caller": "tryToLoad",
+          "callee": "Layout",
+          "lineNumber": 188
+        },
+        {
+          "caller": "tryToLoad",
+          "callee": "line.strip",
+          "lineNumber": 188
+        },
+        {
+          "caller": "tryToLoad",
+          "callee": "f.close",
+          "lineNumber": 190
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 3,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "pacman.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 864,
+      "nonEmptyLines": 712,
+      "functions": [
+        {
+          "name": "default",
+          "startLine": 504,
+          "endLine": 505,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "parseAgentArgs",
+          "startLine": 508,
+          "endLine": 519,
+          "params": [
+            "str"
+          ]
+        },
+        {
+          "name": "readCommand",
+          "startLine": 522,
+          "endLine": 735,
+          "params": [
+            "argv"
+          ]
+        },
+        {
+          "name": "loadAgent",
+          "startLine": 738,
+          "endLine": 762,
+          "params": [
+            "pacman",
+            "nographics"
+          ]
+        },
+        {
+          "name": "replayGame",
+          "startLine": 765,
+          "endLine": 785,
+          "params": [
+            "layout",
+            "actions",
+            "display"
+          ]
+        },
+        {
+          "name": "runGames",
+          "startLine": 788,
+          "endLine": 845,
+          "params": [
+            "layout",
+            "pacman",
+            "ghosts",
+            "display",
+            "numGames",
+            "record",
+            "numTraining",
+            "catchExceptions",
+            "timeout"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "GameState",
+          "startLine": 58,
+          "endLine": 261,
+          "methods": [
+            "getAndResetExplored",
+            "getLegalActions",
+            "generateSuccessor",
+            "getLegalPacmanActions",
+            "generatePacmanSuccessor",
+            "getPacmanState",
+            "getPacmanPosition",
+            "getGhostStates",
+            "getGhostState",
+            "getGhostPosition",
+            "getGhostPositions",
+            "getNumAgents",
+            "getScore",
+            "getCapsules",
+            "getNumFood",
+            "getFood",
+            "getWalls",
+            "hasFood",
+            "hasWall",
+            "isLose",
+            "isWin",
+            "__init__",
+            "deepCopy",
+            "__eq__",
+            "__hash__",
+            "__str__",
+            "initialize"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ClassicGameRules",
+          "startLine": 276,
+          "endLine": 344,
+          "methods": [
+            "__init__",
+            "newGame",
+            "process",
+            "win",
+            "lose",
+            "getProgress",
+            "agentCrash",
+            "getMaxTotalTime",
+            "getMaxStartupTime",
+            "getMoveWarningTime",
+            "getMoveTimeout",
+            "getMaxTimeWarnings"
+          ],
+          "properties": []
+        },
+        {
+          "name": "PacmanRules",
+          "startLine": 347,
+          "endLine": 409,
+          "methods": [
+            "getLegalActions",
+            "applyAction",
+            "consume"
+          ],
+          "properties": []
+        },
+        {
+          "name": "GhostRules",
+          "startLine": 412,
+          "endLine": 496,
+          "methods": [
+            "getLegalActions",
+            "applyAction",
+            "decrementTimer",
+            "checkDeath",
+            "collide",
+            "canKill",
+            "placeGhost"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "GameState",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "ClassicGameRules",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "PacmanRules",
+          "line": 347,
+          "isDefault": false
+        },
+        {
+          "name": "GhostRules",
+          "line": 412,
+          "isDefault": false
+        },
+        {
+          "name": "default",
+          "line": 504,
+          "isDefault": false
+        },
+        {
+          "name": "parseAgentArgs",
+          "line": 508,
+          "isDefault": false
+        },
+        {
+          "name": "readCommand",
+          "line": 522,
+          "isDefault": false
+        },
+        {
+          "name": "loadAgent",
+          "line": 738,
+          "isDefault": false
+        },
+        {
+          "name": "replayGame",
+          "line": 765,
+          "isDefault": false
+        },
+        {
+          "name": "runGames",
+          "line": 788,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAndResetExplored",
+          "callee": "GameState.explored.copy",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getAndResetExplored",
+          "callee": "set",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "self.isWin",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "self.isLose",
+          "lineNumber": 92
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "PacmanRules.getLegalActions",
+          "lineNumber": 96
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "GhostRules.getLegalActions",
+          "lineNumber": 98
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "self.isWin",
+          "lineNumber": 105
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "self.isLose",
+          "lineNumber": 105
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "Exception",
+          "lineNumber": 106
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "GameState",
+          "lineNumber": 109
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "range",
+          "lineNumber": 113
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "state.getNumAgents",
+          "lineNumber": 113
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "PacmanRules.applyAction",
+          "lineNumber": 114
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "GhostRules.applyAction",
+          "lineNumber": 116
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "GhostRules.decrementTimer",
+          "lineNumber": 122
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "GhostRules.checkDeath",
+          "lineNumber": 125
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "GameState.explored.add",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generateSuccessor",
+          "callee": "GameState.explored.add",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getLegalPacmanActions",
+          "callee": "self.getLegalActions",
+          "lineNumber": 135
+        },
+        {
+          "caller": "generatePacmanSuccessor",
+          "callee": "self.generateSuccessor",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getPacmanState",
+          "callee": "self.data.agentStates[0].copy",
+          "lineNumber": 150
+        },
+        {
+          "caller": "getPacmanPosition",
+          "callee": "self.data.agentStates[0].getPosition",
+          "lineNumber": 153
+        },
+        {
+          "caller": "getGhostState",
+          "callee": "self.getNumAgents",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getGhostState",
+          "callee": "Exception",
+          "lineNumber": 160
+        },
+        {
+          "caller": "getGhostPosition",
+          "callee": "Exception",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getGhostPosition",
+          "callee": "self.data.agentStates[agentIndex].getPosition",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getGhostPositions",
+          "callee": "s.getPosition",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getGhostPositions",
+          "callee": "self.getGhostStates",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getNumAgents",
+          "callee": "len",
+          "lineNumber": 172
+        },
+        {
+          "caller": "getScore",
+          "callee": "float",
+          "lineNumber": 175
+        },
+        {
+          "caller": "getNumFood",
+          "callee": "self.data.food.count",
+          "lineNumber": 184
+        },
+        {
+          "caller": "__init__",
+          "callee": "GameStateData",
+          "lineNumber": 232
+        },
+        {
+          "caller": "__init__",
+          "callee": "GameStateData",
+          "lineNumber": 234
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "GameState",
+          "lineNumber": 237
+        },
+        {
+          "caller": "deepCopy",
+          "callee": "self.data.deepCopy",
+          "lineNumber": 238
+        },
+        {
+          "caller": "__eq__",
+          "callee": "hasattr",
+          "lineNumber": 245
+        },
+        {
+          "caller": "__hash__",
+          "callee": "hash",
+          "lineNumber": 251
+        },
+        {
+          "caller": "__str__",
+          "callee": "str",
+          "lineNumber": 255
+        },
+        {
+          "caller": "initialize",
+          "callee": "self.data.initialize",
+          "lineNumber": 261
+        },
+        {
+          "caller": "newGame",
+          "callee": "layout.getNumGhosts",
+          "lineNumber": 294
+        },
+        {
+          "caller": "newGame",
+          "callee": "GameState",
+          "lineNumber": 295
+        },
+        {
+          "caller": "newGame",
+          "callee": "initState.initialize",
+          "lineNumber": 296
+        },
+        {
+          "caller": "newGame",
+          "callee": "len",
+          "lineNumber": 296
+        },
+        {
+          "caller": "newGame",
+          "callee": "Game",
+          "lineNumber": 297
+        },
+        {
+          "caller": "newGame",
+          "callee": "initState.deepCopy",
+          "lineNumber": 299
+        },
+        {
+          "caller": "process",
+          "callee": "state.isWin",
+          "lineNumber": 307
+        },
+        {
+          "caller": "process",
+          "callee": "self.win",
+          "lineNumber": 308
+        },
+        {
+          "caller": "process",
+          "callee": "state.isLose",
+          "lineNumber": 309
+        },
+        {
+          "caller": "process",
+          "callee": "self.lose",
+          "lineNumber": 310
+        },
+        {
+          "caller": "win",
+          "callee": "print",
+          "lineNumber": 314
+        },
+        {
+          "caller": "lose",
+          "callee": "print",
+          "lineNumber": 319
+        },
+        {
+          "caller": "getProgress",
+          "callee": "float",
+          "lineNumber": 323
+        },
+        {
+          "caller": "getProgress",
+          "callee": "game.state.getNumFood",
+          "lineNumber": 323
+        },
+        {
+          "caller": "getProgress",
+          "callee": "self.initialState.getNumFood",
+          "lineNumber": 323
+        },
+        {
+          "caller": "agentCrash",
+          "callee": "print",
+          "lineNumber": 327
+        },
+        {
+          "caller": "agentCrash",
+          "callee": "print",
+          "lineNumber": 329
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "Actions.getPossibleActions",
+          "lineNumber": 359
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "state.getPacmanState",
+          "lineNumber": 360
+        },
+        {
+          "caller": "applyAction",
+          "callee": "PacmanRules.getLegalActions",
+          "lineNumber": 369
+        },
+        {
+          "caller": "applyAction",
+          "callee": "Exception",
+          "lineNumber": 371
+        },
+        {
+          "caller": "applyAction",
+          "callee": "str",
+          "lineNumber": 371
+        },
+        {
+          "caller": "applyAction",
+          "callee": "Actions.directionToVector",
+          "lineNumber": 376
+        },
+        {
+          "caller": "applyAction",
+          "callee": "pacmanState.configuration.generateSuccessor",
+          "lineNumber": 377
+        },
+        {
+          "caller": "applyAction",
+          "callee": "pacmanState.configuration.getPosition",
+          "lineNumber": 380
+        },
+        {
+          "caller": "applyAction",
+          "callee": "nearestPoint",
+          "lineNumber": 381
+        },
+        {
+          "caller": "applyAction",
+          "callee": "manhattanDistance",
+          "lineNumber": 382
+        },
+        {
+          "caller": "applyAction",
+          "callee": "PacmanRules.consume",
+          "lineNumber": 384
+        },
+        {
+          "caller": "consume",
+          "callee": "state.data.food.copy",
+          "lineNumber": 393
+        },
+        {
+          "caller": "consume",
+          "callee": "state.getNumFood",
+          "lineNumber": 397
+        },
+        {
+          "caller": "consume",
+          "callee": "state.getCapsules",
+          "lineNumber": 402
+        },
+        {
+          "caller": "consume",
+          "callee": "state.data.capsules.remove",
+          "lineNumber": 403
+        },
+        {
+          "caller": "consume",
+          "callee": "range",
+          "lineNumber": 406
+        },
+        {
+          "caller": "consume",
+          "callee": "len",
+          "lineNumber": 406
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "state.getGhostState",
+          "lineNumber": 424
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "Actions.getPossibleActions",
+          "lineNumber": 425
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "Actions.reverseDirection",
+          "lineNumber": 426
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "possibleActions.remove",
+          "lineNumber": 428
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "len",
+          "lineNumber": 429
+        },
+        {
+          "caller": "getLegalActions",
+          "callee": "possibleActions.remove",
+          "lineNumber": 430
+        },
+        {
+          "caller": "applyAction",
+          "callee": "GhostRules.getLegalActions",
+          "lineNumber": 437
+        },
+        {
+          "caller": "applyAction",
+          "callee": "Exception",
+          "lineNumber": 439
+        },
+        {
+          "caller": "applyAction",
+          "callee": "str",
+          "lineNumber": 439
+        },
+        {
+          "caller": "applyAction",
+          "callee": "Actions.directionToVector",
+          "lineNumber": 445
+        },
+        {
+          "caller": "applyAction",
+          "callee": "ghostState.configuration.generateSuccessor",
+          "lineNumber": 446
+        },
+        {
+          "caller": "decrementTimer",
+          "callee": "nearestPoint",
+          "lineNumber": 453
+        },
+        {
+          "caller": "decrementTimer",
+          "callee": "max",
+          "lineNumber": 454
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "state.getPacmanPosition",
+          "lineNumber": 459
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "range",
+          "lineNumber": 461
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "len",
+          "lineNumber": 461
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "ghostState.configuration.getPosition",
+          "lineNumber": 463
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "GhostRules.canKill",
+          "lineNumber": 464
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "GhostRules.collide",
+          "lineNumber": 465
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "ghostState.configuration.getPosition",
+          "lineNumber": 468
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "GhostRules.canKill",
+          "lineNumber": 469
+        },
+        {
+          "caller": "checkDeath",
+          "callee": "GhostRules.collide",
+          "lineNumber": 470
+        },
+        {
+          "caller": "collide",
+          "callee": "GhostRules.placeGhost",
+          "lineNumber": 477
+        },
+        {
+          "caller": "canKill",
+          "callee": "manhattanDistance",
+          "lineNumber": 489
+        },
+        {
+          "caller": "parseAgentArgs",
+          "callee": "str.split",
+          "lineNumber": 511
+        },
+        {
+          "caller": "parseAgentArgs",
+          "callee": "p.split",
+          "lineNumber": 515
+        },
+        {
+          "caller": "readCommand",
+          "callee": "OptionParser",
+          "lineNumber": 536
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 538
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 543
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 547
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 551
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 555
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 559
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 563
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 571
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 579
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 583
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 587
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 592
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 595
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 600
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 603
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 611
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 619
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 625
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 631
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 636
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 639
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 643
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 646
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.add_option",
+          "lineNumber": 654
+        },
+        {
+          "caller": "readCommand",
+          "callee": "default",
+          "lineNumber": 658
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parser.parse_args",
+          "lineNumber": 664
+        },
+        {
+          "caller": "readCommand",
+          "callee": "len",
+          "lineNumber": 665
+        },
+        {
+          "caller": "readCommand",
+          "callee": "Exception",
+          "lineNumber": 666
+        },
+        {
+          "caller": "readCommand",
+          "callee": "str",
+          "lineNumber": 666
+        },
+        {
+          "caller": "readCommand",
+          "callee": "dict",
+          "lineNumber": 667
+        },
+        {
+          "caller": "readCommand",
+          "callee": "random.seed",
+          "lineNumber": 671
+        },
+        {
+          "caller": "readCommand",
+          "callee": "layout.getLayout",
+          "lineNumber": 674
+        },
+        {
+          "caller": "readCommand",
+          "callee": "Exception",
+          "lineNumber": 676
+        },
+        {
+          "caller": "readCommand",
+          "callee": "loadAgent",
+          "lineNumber": 682
+        },
+        {
+          "caller": "readCommand",
+          "callee": "parseAgentArgs",
+          "lineNumber": 683
+        },
+        {
+          "caller": "readCommand",
+          "callee": "pacmanType",
+          "lineNumber": 688
+        },
+        {
+          "caller": "readCommand",
+          "callee": "int",
+          "lineNumber": 693
+        },
+        {
+          "caller": "readCommand",
+          "callee": "int",
+          "lineNumber": 694
+        },
+        {
+          "caller": "readCommand",
+          "callee": "loadAgent",
+          "lineNumber": 697
+        },
+        {
+          "caller": "readCommand",
+          "callee": "ghostType",
+          "lineNumber": 698
+        },
+        {
+          "caller": "readCommand",
+          "callee": "range",
+          "lineNumber": 698
+        },
+        {
+          "caller": "readCommand",
+          "callee": "textDisplay.NullGraphics",
+          "lineNumber": 704
+        },
+        {
+          "caller": "readCommand",
+          "callee": "textDisplay.PacmanGraphics",
+          "lineNumber": 709
+        },
+        {
+          "caller": "readCommand",
+          "callee": "graphicsDisplay.PacmanGraphics",
+          "lineNumber": 713
+        },
+        {
+          "caller": "readCommand",
+          "callee": "print",
+          "lineNumber": 723
+        },
+        {
+          "caller": "readCommand",
+          "callee": "open",
+          "lineNumber": 726
+        },
+        {
+          "caller": "readCommand",
+          "callee": "pickle.load",
+          "lineNumber": 728
+        },
+        {
+          "caller": "readCommand",
+          "callee": "f.close",
+          "lineNumber": 730
+        },
+        {
+          "caller": "readCommand",
+          "callee": "replayGame",
+          "lineNumber": 732
+        },
+        {
+          "caller": "readCommand",
+          "callee": "sys.exit",
+          "lineNumber": 733
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "os.path.expandvars",
+          "lineNumber": 740
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "pythonPathStr.find",
+          "lineNumber": 741
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "pythonPathStr.split",
+          "lineNumber": 742
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "pythonPathStr.split",
+          "lineNumber": 744
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "pythonPathDirs.append",
+          "lineNumber": 745
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "os.path.isdir",
+          "lineNumber": 748
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "os.listdir",
+          "lineNumber": 750
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "f.endswith",
+          "lineNumber": 750
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "__import__",
+          "lineNumber": 753
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "dir",
+          "lineNumber": 756
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "Exception",
+          "lineNumber": 758
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "getattr",
+          "lineNumber": 761
+        },
+        {
+          "caller": "loadAgent",
+          "callee": "Exception",
+          "lineNumber": 762
+        },
+        {
+          "caller": "replayGame",
+          "callee": "ClassicGameRules",
+          "lineNumber": 769
+        },
+        {
+          "caller": "replayGame",
+          "callee": "pacmanAgents.GreedyAgent",
+          "lineNumber": 770
+        },
+        {
+          "caller": "replayGame",
+          "callee": "ghostAgents.RandomGhost",
+          "lineNumber": 771
+        },
+        {
+          "caller": "replayGame",
+          "callee": "range",
+          "lineNumber": 771
+        },
+        {
+          "caller": "replayGame",
+          "callee": "layout.getNumGhosts",
+          "lineNumber": 771
+        },
+        {
+          "caller": "replayGame",
+          "callee": "rules.newGame",
+          "lineNumber": 773
+        },
+        {
+          "caller": "replayGame",
+          "callee": "display.initialize",
+          "lineNumber": 775
+        },
+        {
+          "caller": "replayGame",
+          "callee": "state.generateSuccessor",
+          "lineNumber": 779
+        },
+        {
+          "caller": "replayGame",
+          "callee": "display.update",
+          "lineNumber": 781
+        },
+        {
+          "caller": "replayGame",
+          "callee": "rules.process",
+          "lineNumber": 783
+        },
+        {
+          "caller": "replayGame",
+          "callee": "display.finish",
+          "lineNumber": 785
+        },
+        {
+          "caller": "runGames",
+          "callee": "ClassicGameRules",
+          "lineNumber": 803
+        },
+        {
+          "caller": "runGames",
+          "callee": "range",
+          "lineNumber": 806
+        },
+        {
+          "caller": "runGames",
+          "callee": "textDisplay.NullGraphics",
+          "lineNumber": 812
+        },
+        {
+          "caller": "runGames",
+          "callee": "rules.newGame",
+          "lineNumber": 817
+        },
+        {
+          "caller": "runGames",
+          "callee": "game.run",
+          "lineNumber": 820
+        },
+        {
+          "caller": "runGames",
+          "callee": "games.append",
+          "lineNumber": 822
+        },
+        {
+          "caller": "runGames",
+          "callee": "\"-\".join",
+          "lineNumber": 828
+        },
+        {
+          "caller": "runGames",
+          "callee": "str",
+          "lineNumber": 829
+        },
+        {
+          "caller": "runGames",
+          "callee": "time.localtime",
+          "lineNumber": 829
+        },
+        {
+          "caller": "runGames",
+          "callee": "file",
+          "lineNumber": 831
+        },
+        {
+          "caller": "runGames",
+          "callee": "pickle.dump",
+          "lineNumber": 833
+        },
+        {
+          "caller": "runGames",
+          "callee": "f.close",
+          "lineNumber": 834
+        },
+        {
+          "caller": "runGames",
+          "callee": "game.state.getScore",
+          "lineNumber": 837
+        },
+        {
+          "caller": "runGames",
+          "callee": "game.state.isWin",
+          "lineNumber": 838
+        },
+        {
+          "caller": "runGames",
+          "callee": "wins.count",
+          "lineNumber": 839
+        },
+        {
+          "caller": "runGames",
+          "callee": "float",
+          "lineNumber": 839
+        },
+        {
+          "caller": "runGames",
+          "callee": "len",
+          "lineNumber": 839
+        },
+        {
+          "caller": "runGames",
+          "callee": "print",
+          "lineNumber": 840
+        },
+        {
+          "caller": "runGames",
+          "callee": "sum",
+          "lineNumber": 840
+        },
+        {
+          "caller": "runGames",
+          "callee": "float",
+          "lineNumber": 840
+        },
+        {
+          "caller": "runGames",
+          "callee": "len",
+          "lineNumber": 840
+        },
+        {
+          "caller": "runGames",
+          "callee": "print",
+          "lineNumber": 841
+        },
+        {
+          "caller": "runGames",
+          "callee": "\", \".join",
+          "lineNumber": 841
+        },
+        {
+          "caller": "runGames",
+          "callee": "str",
+          "lineNumber": 841
+        },
+        {
+          "caller": "runGames",
+          "callee": "print",
+          "lineNumber": 842
+        },
+        {
+          "caller": "runGames",
+          "callee": "wins.count",
+          "lineNumber": 842
+        },
+        {
+          "caller": "runGames",
+          "callee": "len",
+          "lineNumber": 842
+        },
+        {
+          "caller": "runGames",
+          "callee": "print",
+          "lineNumber": 843
+        },
+        {
+          "caller": "runGames",
+          "callee": "\", \".join",
+          "lineNumber": 843
+        },
+        {
+          "caller": "runGames",
+          "callee": "int",
+          "lineNumber": 843
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 10,
+        "functionCount": 6,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "pacmanAgents.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 52,
+      "functions": [
+        {
+          "name": "scoreEvaluation",
+          "startLine": 63,
+          "endLine": 64,
+          "params": [
+            "state"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LeftTurnAgent",
+          "startLine": 23,
+          "endLine": 40,
+          "methods": [
+            "getAction"
+          ],
+          "properties": []
+        },
+        {
+          "name": "GreedyAgent",
+          "startLine": 43,
+          "endLine": 60,
+          "methods": [
+            "__init__",
+            "getAction"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "LeftTurnAgent",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "GreedyAgent",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "scoreEvaluation",
+          "line": 63,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getAction",
+          "callee": "state.getLegalPacmanActions",
+          "lineNumber": 27
+        },
+        {
+          "caller": "getAction",
+          "callee": "state.getPacmanState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "__init__",
+          "callee": "util.lookup",
+          "lineNumber": 45
+        },
+        {
+          "caller": "__init__",
+          "callee": "globals",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getAction",
+          "callee": "state.getLegalPacmanActions",
+          "lineNumber": 50
+        },
+        {
+          "caller": "getAction",
+          "callee": "legal.remove",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getAction",
+          "callee": "state.generateSuccessor",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getAction",
+          "callee": "self.evaluationFunction",
+          "lineNumber": 56
+        },
+        {
+          "caller": "getAction",
+          "callee": "max",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getAction",
+          "callee": "random.choice",
+          "lineNumber": 60
+        },
+        {
+          "caller": "scoreEvaluation",
+          "callee": "state.getScore",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 2
+      }
+    }
+  ]
+}

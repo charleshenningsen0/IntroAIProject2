@@ -1,0 +1,32 @@
+[
+  {
+    "id": "layer:core-engine",
+    "name": "Game Engine & Rules",
+    "description": "The Pacman simulation core: the generic Game loop and Agent interface in game.py, plus pacman.py's GameState, win/lose and movement rules, and the command-line entry point that wires layouts, agents, and displays together.",
+    "nodeIds": ["file:game.py", "file:pacman.py"]
+  },
+  {
+    "id": "layer:foundation",
+    "name": "Shared Foundation",
+    "description": "Foundational support code every other module depends on: util.py's search data structures (Stack, Queue, PriorityQueue, Counter), probability and timeout helpers, and layout.py's .lay maze parsing and layout lookup.",
+    "nodeIds": ["file:util.py", "file:layout.py"]
+  },
+  {
+    "id": "layer:adversarial-search",
+    "name": "Adversarial Search Agents",
+    "description": "The student implementation surface for the multi-agent search assignment: ReflexAgent, the MultiAgentSearchAgent base class, and the Minimax, Alpha-Beta, and Expectimax agents with their evaluation functions in multiAgents.py.",
+    "nodeIds": ["file:multiAgents.py"]
+  },
+  {
+    "id": "layer:agent-policies",
+    "name": "Agent Policies & Controls",
+    "description": "Alternative agent implementations loaded at runtime by name: baseline greedy and left-turning Pacman agents, the random and Pacman-seeking DirectionalGhost policies, and the keyboard-driven human agents.",
+    "nodeIds": ["file:ghostAgents.py", "file:pacmanAgents.py", "file:keyboardAgents.py"]
+  },
+  {
+    "id": "layer:project-config",
+    "name": "Project Metadata & Configuration",
+    "description": "Course-harness metadata rather than runtime logic: projectParams.py's autograder settings (student file, test class, bonus flags) and the VERSION release stamp for the CS188 project.",
+    "nodeIds": ["file:projectParams.py", "file:VERSION"]
+  }
+]

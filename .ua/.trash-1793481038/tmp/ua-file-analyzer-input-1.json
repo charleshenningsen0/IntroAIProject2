@@ -1,0 +1,17 @@
+{
+  "projectRoot": "/Users/charleshenningsen/Desktop/Artificial Intelligence/project2-1",
+  "batchFiles": [
+    {"path": "game.py", "language": "python", "sizeLines": 830, "fileCategory": "code"},
+    {"path": "keyboardAgents.py", "language": "python", "sizeLines": 105, "fileCategory": "code"},
+    {"path": "layout.py", "language": "python", "sizeLines": 190, "fileCategory": "code"},
+    {"path": "pacman.py", "language": "python", "sizeLines": 864, "fileCategory": "code"},
+    {"path": "pacmanAgents.py", "language": "python", "sizeLines": 64, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "game.py": ["util.py"],
+    "keyboardAgents.py": ["game.py"],
+    "layout.py": ["game.py", "util.py"],
+    "pacman.py": ["game.py", "layout.py", "util.py"],
+    "pacmanAgents.py": ["game.py", "pacman.py", "util.py"]
+  }
+}

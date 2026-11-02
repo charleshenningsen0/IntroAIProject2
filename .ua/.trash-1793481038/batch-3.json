@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "id": "file:VERSION",
+      "type": "file",
+      "name": "VERSION",
+      "filePath": "VERSION",
+      "summary": "One-line version stamp recording the CS188 project release number (v1.004) that this Pacman codebase corresponds to.",
+      "tags": ["metadata", "versioning", "release-stamp"],
+      "complexity": "simple",
+      "languageNotes": "Plain-text single-token file with no parser support; it is read verbatim by release tooling rather than parsed as source code."
+    },
+    {
+      "id": "file:projectParams.py",
+      "type": "file",
+      "name": "projectParams.py",
+      "filePath": "projectParams.py",
+      "summary": "Project-wide configuration module that tells the autograder which student file to grade, which test-class module to load, the human-readable project name, and whether bonus questions are enabled.",
+      "tags": ["configuration", "grading", "constants", "autograder"],
+      "complexity": "simple",
+      "languageNotes": "A pure Python constants module: no imports, functions, or classes, only four uppercase module-level assignments that other modules read via attribute access."
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:projectParams.py",
+      "target": "file:multiAgents.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:projectParams.py",
+      "target": "file:multiagentTestClasses.py",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}
