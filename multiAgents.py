@@ -161,8 +161,54 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         """
         Returns the minimax action using self.depth and self.evaluationFunction
         """
-        "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+
+        def alphabeta(state, depth, agentIndex, alpha, beta):
+            if depth == self.depth or state.isWin() or state.isLose():
+                return self.evaluationFunction(state)
+
+            numAgents = state.getNumAgents()
+            nextAgent = (agentIndex + 1) % numAgents
+            nextDepth = depth + 1 if nextAgent == 0 else depth
+
+            if agentIndex == 0:
+                v = float('-inf')
+                for action in state.getLegalActions(agentIndex):
+                    successor = state.generateSuccessor(agentIndex, action)
+                    v = max(v, alphabeta(successor, nextDepth, nextAgent, alpha, beta))
+                    if v > beta:  # Strictly greater than (no pruning on equality)
+                        return v
+                    alpha = max(alpha, v)
+                return v
+            else:
+                # MIN node (Ghosts)
+                v = float('inf')
+                for action in state.getLegalActions(agentIndex):
+                    successor = state.generateSuccessor(agentIndex, action)
+                    v = min(v, alphabeta(successor, nextDepth, nextAgent, alpha, beta))
+                    if v < alpha:  # Strictly less than (no pruning on equality)
+                        return v
+                    beta = min(beta, v)
+                return v
+
+        alpha = float('-inf')
+        beta = float('inf')
+        bestScore = float('-inf')
+        bestAction = None
+
+        numAgents = gameState.getNumAgents()
+        nextAgent = 1 % numAgents
+        nextDepth = 1 if nextAgent == 0 else 0
+
+        for action in gameState.getLegalActions(0):
+            successor = gameState.generateSuccessor(0, action)
+            score = alphabeta(successor, nextDepth, nextAgent, alpha, beta)
+            if score > bestScore:
+                bestScore = score
+                bestAction = action
+            alpha = max(alpha, bestScore)
+
+        return bestAction
+
 
 
 class ExpectimaxAgent(MultiAgentSearchAgent):
