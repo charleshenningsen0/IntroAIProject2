@@ -149,6 +149,63 @@ class MinimaxAgent(MultiAgentSearchAgent):
         Returns whether or not the game state is a losing state
         """
         "*** YOUR CODE HERE ***"
+        # Agents [Pacman, G1, G2, ... , GN]
+        def value(state, currentDepth, agentIndex):
+            #Terminal / test
+            if state.isWin() or state.isLose() or currentDepth == self.depth:
+                return self.evaluationFunction(state), None
+            if agentIndex ==0:
+                # Max layer
+                return maxValue(state, currentDepth, agentIndex)
+            else:
+                return minValue(state, currentDepth, agentIndex)
+
+        def maxValue(state, currentDepth, agentIndex):
+            legalActions = state.getLegalActions(agentIndex)
+            if not legalActions:
+                return self.evaluationFunction(state), None
+
+            bestScore = float("-inf")
+            bestAction = None
+
+            for action in legalActions:
+                successor = state.generateSuccessor(agentIndex, action)
+                score, _ = value(successor, currentDepth, agentIndex + 1)
+                if score > bestScore:
+                    bestScore = score
+                    bestAction = action
+
+            return bestScore, bestAction
+
+        def minValue(state, currentDepth, agentIndex):
+            legalActions = state.getLegalActions(agentIndex)
+            if not legalActions:
+                return self.evaluationFunction(state), None
+
+            bestScore = float("inf")
+            bestAction = None
+
+            numAgents = state.getNumAgents()
+            # If this is the last ghost, next agent is Pacman (0) and depth advances by 1
+            if agentIndex == numAgents - 1:
+                nextAgent = 0
+                nextDepth = currentDepth + 1
+            else:
+                nextAgent = agentIndex + 1
+                nextDepth = currentDepth
+
+            for action in legalActions:
+                successor = state.generateSuccessor(agentIndex, action)
+                score, _ = value(successor, nextDepth, nextAgent)
+                if score < bestScore:
+                    bestScore = score
+                    bestAction = action
+
+            return bestScore, bestAction
+        
+        _, action = value(gameState, 0, 0)
+        return action
+        
         util.raiseNotDefined()
 
 
